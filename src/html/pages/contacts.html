@@ -10,9 +10,9 @@
      <!-- Фоновое изображение на весь экран -->
     <div class="fixed inset-0 -z-10 ">
         <picture>
-            <!-- Десктоп: md и выше (≥640px) -->
+            <!-- Десктоп: md и выше (≥40rem) -->
             <source 
-                media="(min-width: 640px)" 
+                media="(min-width: 40rem)" 
                 srcset="/public/images/webp/bg-desk-contacts.webp"
                 type="image/webp"
             >
@@ -28,7 +28,7 @@
 
 
     <!-- Контент поверх фона -->
-    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[300px] max-w-[900px] px-[10px] py-[5px] relative z-10">
+    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10">
         {{> layout/header}} 
         {{> sections/contacts}}            
     </div>

@@ -4,35 +4,35 @@ export default {
 
   theme: {
     screens: {
-      xs350: "350px",
-      // => @media (min-width: 350px) { ... }
+      xs350: "21.875rem",
+      // => @media (min-width: 21.875rem) { ... }
 
-      xs380: "380px",
-      // => @media (min-width: 380px) { ... }
+      xs380: "23.75rem",
+      // => @media (min-width: 23.75rem) { ... }
 
-      xs400: "400px",
-      // => @media (min-width: 400px) { ... }
+      xs400: "25rem",
+      // => @media (min-width: 25rem) { ... }
 
-      xs440: "440px",
-      // => @media (min-width: 440px) { ... }
+      xs440: "27.5rem",
+      // => @media (min-width: 27.5rem) { ... }
 
-      xs576: "576px",
-      // => @media (min-width: 576px) { ... }
+      xs576: "36rem",
+      // => @media (min-width: 36rem) { ... }
 
-      sm: "640px",
-      // => @media (min-width: 640px) { ... }
+      sm: "40rem",
+      // => @media (min-width: 40rem) { ... }
 
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
+      md: "48rem",
+      // => @media (min-width: 48rem) { ... }
 
-      lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
+      lg: "64rem",
+      // => @media (min-width: 64rem) { ... }
 
-      xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
+      xl: "80rem",
+      // => @media (min-width: 80rem) { ... }
 
-      "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
+      "2xl": "96rem",
+      // => @media (min-width: 96rem) { ... }
     },
     extend: {
       colors: {

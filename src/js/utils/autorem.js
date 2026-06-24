@@ -29,7 +29,7 @@ export default function initAutoRem({
       });
     } else {
       globalScaleFactor = 1;
-      htmlElement.style.fontSize = "16px";
+      htmlElement.style.fontSize = "1rem";
 
       console.log("adaptive rem mode:", {
         screenWidth

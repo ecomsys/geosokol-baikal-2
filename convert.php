@@ -7,7 +7,7 @@ $extraFiles = [
 ];
 
 $rootFontSize = 16;
-$mode = 'toPx'; // 'toRem' или 'toPx'
+$mode = 'toRem'; // 'toRem' или 'toPx'
 
 // Рекурсивная функция
 function scanDirRecursively($dir) {
