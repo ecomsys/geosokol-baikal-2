@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    
+    <!-- MOBILE VIEWPORT -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    
+    <!-- TITLE -->
+    <title>Байкал Маркет</title>
+    
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Краткое описание проекта. Что это за сайт, для кого и какую пользу он даёт."
+    />
+    
+    <meta
+      name="keywords"
+      content="ключевые, слова, проекта, через, запятую"
+    />
+    
+    <meta name="author" content="Your Name or Company" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- THEME -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#000000" />
+    
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Project Name" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Project Name — краткое описание" />
+    <meta
+      property="og:description"
+      content="Описание проекта для превью в соцсетях."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/" />
+    <meta property="og:image" content="/favicons/og-image.png" />
+    <meta property="og:site_name" content="Project Name" />
+    
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Project Name" />
+    <meta
+      name="twitter:description"
+      content="Описание проекта для Twitter превью."
+    />
+    <meta name="twitter:image" content="/favicons/og-image.png" />
+    
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://yourdomain.com/" />
+    
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    
+    <!-- PWA MANIFEST -->
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->  <script type="module" crossorigin src="/assets/main-C5y1X0tq.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-o2Qnkgec.css">
+</head>
+
+<body class="relative min-h-screen bg-[#ECEDEF]">   
+
+     <!-- Фоновое изображение на весь экран -->
+    <div class="fixed inset-0 -z-10 ">
+        <picture>
+            <!-- Десктоп: md и выше (≥640px) -->
+            <source 
+                media="(min-width: 640px)" 
+                srcset="/assets/bg-desk-contacts-BaYO2N7v.webp"
+                type="image/webp"
+            >
+            <!-- Мобильная версия: по умолчанию -->
+            <img 
+                class="w-full h-auto object-cover object-bottom-right" 
+                src="/assets/bg-mobile-contacts-Dubdf9an.webp" 
+                alt="bg"
+                fetchpriority="high"
+            >
+        </picture>
+    </div>
+
+
+    <!-- Контент поверх фона -->
+    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[300px] max-w-[900px] px-[10px] py-[5px] relative z-10">
+        <style>
+          .desk-menu li a {
+            transition: all 0.3s ease-in-out;
+          }
+          .desk-menu li a:hover {
+            color: black;
+          }
+          .desk-menu li a.active {    
+            font-weight: 700; /* опционально */    
+          }
+        </style>
+        
+        <header
+          class="w-full max-w-[890px] mx-auto flex items-center justify-between relative z-50"
+        >
+          <!-- logo -->
+          <a
+            href="index.html"
+            class="block w-[64px] h-[64px] md:w-[81px] md:h-[81px] hover:scale-[102%] transition-all duration-300 shrink-0"
+          >
+            <img
+              class="w-full h-full object-cover"
+              src="./images/webp/bailkal-blue.webp"
+              alt="Логотип Байкал"
+            />
+          </a>
+        
+          <!-- desk menu -->
+          <ul
+            class="desk-menu hidden md:inline-flex items-center gap-6 xl:gap-9 text-siniy text-[16px] xl:text-[20px] mx-auto"
+          >
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="purchase.html">Закупка по вашему списку</a></li>
+          </ul>
+        
+          <!-- tel button -->
+          <a
+            href="tel:+77777777777"
+            class="hidden md:inline-flex items-center bg-siniy h-[43px] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300 shrink-0"
+          >
+            <span class="px-3 text-white text-[16px] text-nowrap">+7 777 777 7777</span>
+            <span
+              class="bg-siniy aspect-square h-full rounded-full flex items-center justify-center"
+              style="box-shadow: -6px 0 21px 0 rgba(0, 0, 0, 0.55)"
+            >
+              <img class="w-[26px] h-[26px]" src="./images/webp/tel.webp" alt="Tel" />
+            </span>
+          </a>
+        
+          <!-- burger -->
+          <button
+            id="burgerBtn"
+            class="flex md:hidden items-center justify-center bg-siniy rounded-[8px] h-[49px] w-[49px] relative z-50"
+          >
+            <svg
+              width="21"
+              height="19"
+              viewBox="0 0 21 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                class="line line-top"
+                width="21"
+                height="3"
+                rx="1.21212"
+                fill="white"
+              />
+              <rect
+                class="line line-middle"
+                y="8"
+                width="21"
+                height="3"
+                rx="1.21212"
+                fill="white"
+              />
+              <rect
+                class="line line-bottom"
+                y="16"
+                width="21"
+                height="3"
+                rx="1.21212"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </header>
+        
+        <!-- OVERLAY -->
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+        ></div>
+        
+        <!-- DRAWER MENU -->
+        <div
+          id="drawer"
+          class="min-w-[300px] fixed inset-0 bg-siniy z-50 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+        >
+          <!-- Шапка драйвера (фиксированная) -->
+          <div
+            class="shrink-0 flex justify-between px-[10px] py-2 border-b border-white/15"
+          >
+            <a
+              href="index.html"
+              class="block w-[64px] h-[64px] hover:scale-[102%] transition-all duration-300"
+            >
+              <img
+                class="w-full h-full object-cover"
+                src="./images/webp/bailkal-white.webp"
+                alt="Логотип Байкал"
+              />
+            </a>
+            <button
+              id="closeDrawer"
+              class="flex items-center justify-center bg-siniy rounded-[8px] h-[49px] w-[49px] hover:opacity-70 transition-opacity"
+            >
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="2.92871"
+                  y="0.636719"
+                  width="25"
+                  height="3"
+                  rx="1.21212"
+                  transform="rotate(45 2.92871 0.636719)"
+                  fill="white"
+                />
+                <rect
+                  x="0.636719"
+                  y="17.6777"
+                  width="25"
+                  height="3"
+                  rx="1.21212"
+                  transform="rotate(-45 0.636719 17.6777)"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
+        
+          <!-- Меню (скроллится если не помещается) -->
+          <div class="flex-1 overflow-y-auto py-4 relative scrollbar-none">
+            <!-- Фоновое изображение (без затемнения) -->
+            <div class="absolute inset-0 -z-10 flex items-center justify-center">
+              <img
+                class="max-w-[26rem] w-full h-auto object-contain object-center"
+                src="./images/webp/baikal-mask.webp"
+                alt="bg"
+              />
+            </div>
+        
+            <div class="min-h-full flex items-center justify-center px-4">
+              <ul
+                class="mobile-menu flex flex-col items-center gap-6 text-white text-2xl font-monts w-full max-w-sm pb-4"
+              >
+                <li class="w-full text-center">
+                  <a href="contacts.html" class="block">Контакты</a>
+                </li>
+                <li class="w-full text-center">
+                  <a href="about.html" class="block">О нас</a>
+                </li>
+                <li class="w-full text-center">
+                  <a href="purchase.html" class="block">Закупка по вашему списку</a>
+                </li>
+                <li class="pt-4 w-full flex justify-center">
+                  <a
+                    href="tel:+77777777777"
+                    class="inline-flex items-center bg-white/30 h-[43px] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
+                  >
+                    <span class="px-3 text-white text-[16px] text-nowrap"
+                      >+7 777 777 7777</span
+                    >
+                    <span
+                      class="bg-white/30 aspect-square h-full rounded-full flex items-center justify-center"
+                      style="box-shadow: -6px 0 21px 0 rgba(0, 0, 0, 0.55)"
+                    >
+                      <img
+                        class="w-[26px] h-[26px]"
+                        src="./images/webp/tel.webp"
+                        alt="Tel"
+                      />
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const currentUrl = window.location.href;
+        
+            document.querySelectorAll(".desk-menu a").forEach((link) => {
+              // Если href ссылки совпадает с текущим URL
+              if (link.href === currentUrl) {
+                link.classList.add("active");
+              }
+              // Или если ссылка содержит текущий путь
+              else if (link.getAttribute("href") === window.location.pathname) {
+                link.classList.add("active");
+              }
+            });
+          });
+        </script>
+        <main class="mt-10 flex-1 py-5 text-siniy flex flex-col gap-5 text-[18px] xs380:text-[20px] sm:text-[22px] ">
+          <h1 class="xl:text-[51px] leading-[0.86] font-bold mb-5">Контакты</h1>
+        
+          <div class="flex flex-col gap-3">
+            <h2 class="text-[22px] font-bold">Адрес</h2>
+            <p>665821, Россия, Иркутская область, Ангарск, 290-й квартал 18/4</p>
+          </div>
+        
+          <div class="flex flex-col gap-3">
+            <h2 class="text-[22px] font-bold">ИНН / ОГРН</h2>
+            <p>3801111653 / 1103801005330</p>
+          </div>
+        
+          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+            <div class="flex flex-col gap-3">
+              <h2 class="text-[22px] font-bold">Телефон</h2>
+              <ul class="leading-[1.2]">
+                <li>+7 395 566 17 97</li>
+                <li>+7 395 557 38 63</li>
+                <li>+7 924 533 40 53</li>
+              </ul>
+            </div>
+        
+            <div class="flex flex-col gap-3">
+              <h2 class="text-[22px] font-bold">Почта</h2>
+              <p>baykm@mail.ru</p>
+            </div>
+          </div>
+        </main>
+    </div>
+
+    <!-- Основной JS файл -->
+</body>
+
+</html>

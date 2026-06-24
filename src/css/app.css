@@ -1,0 +1,372 @@
+/* ------------------------------------------------------------------------------------------------------------------------------
+ROOT
+--------------------------------------------------------------------------------------------------------------------------------*/
+:root {
+  --site-max-width: 90rem;
+  --font-title: "Montserrat", sans-serif;
+  --font-main: "Inter", sans-serif;
+  --white: white;
+  --black: black;
+  --accent: #00EEFF;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+Base
+--------------------------------------------------------------------------------------------------------------------------------*/
+/* html {
+  opacity: 0.5;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out
+}
+html.loaded {
+  opacity: 1;
+} */
+
+/* ------------------------------------------------------------------------------------------------------------------------------
+MAIN
+--------------------------------------------------------------------------------------------------------------------------------*/
+.main__title {
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+}
+.main__description {
+  font-weight: 800;
+  line-height: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 29px;
+}
+.main__white {
+  display: block;
+  color: var(--white);
+  white-space: nowrap;
+}
+.main__accent {
+  display: block;
+  color: var(--accent);
+  white-space: nowrap;
+  line-height: 122%;
+}
+.main__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 100px;
+  border: 1px solid #a3ebff;
+  padding-inline: 20px;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 238, 255, 0.3));
+  background-size: 200% 100%;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+.main__btn img {
+  width: 22px;
+  height: 22px;
+}
+.main__btn:hover, .main__btn:focus {
+  animation: fadeUp 0.9s ease forwards, gradientMove 3s linear infinite;
+}
+.main__btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+/* Базовое состояние (до анимации) */
+.animate-text,
+.animate-btn {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Анимация */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Запуск анимации */
+.animate-text {
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.animate-btn {
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 0.4s; /* кнопка появляется позже */
+}
+
+.main__description span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.main__description span:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.main__description span:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.main__description span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+
+@media (min-width: 390px){
+  .main__description {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 576px){    
+  .main__btn {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px){ 
+  
+  .main__title {
+    font-size: 22px;
+  }
+  .main__description {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 992px){
+  .main__btn img {
+    width: 27px;
+    height: 27px;
+  }
+  .main__btn {
+    height: 62px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px){  
+  .main__content {
+    padding-top: 90px;
+  }
+  .main__title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1400px){  
+  .main__description {
+    line-height: 86%;
+    font-size: 85px;
+  }
+}
+
+
+/* ==========================================================================================================================
+   BASIC ENTRANCE ANIMATIONS
+============================================================================================================================ */
+/* Плавное появление сверху (header reveal) */
+@keyframes show-header {
+  0% {
+    inset-block-start: -100%;
+  }
+  100% {
+    inset-block-start: 0;
+  }
+}
+/* Fade + движение вверх (чуть заметное) */
+@keyframes fade-up-big {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Просто fade */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Плавное появление снизу */
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Появление слева */
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Появление справа */
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ===================================================================
+   SCALE ANIMATIONS
+=================================================================== */
+/* Лёгкий pop эффект */
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Сильный pop */
+@keyframes scale-bounce {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ===================================================================
+   EXIT ANIMATIONS
+=================================================================== */
+/* Fade out */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* Slide вверх и исчезновение */
+@keyframes slide-up-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+/* ===================================================================
+   ROTATION
+=================================================================== */
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+/* Медленная постоянная анимация */
+@keyframes rotation-slow {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ===================================================================
+   MICRO INTERACTIONS
+=================================================================== */
+/* Hover-подъём */
+@keyframes lift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+/* Лёгкое покачивание */
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+/* ===================================================================
+   MODERN EFFECTS
+=================================================================== */
+/* Blur reveal (круто для hero текста) */
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+/* Clip reveal (эффект раскрытия) */
+@keyframes clip-reveal {
+  0% {
+    clip-path: inset(0 0 100% 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}

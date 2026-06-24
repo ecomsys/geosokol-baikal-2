@@ -1,0 +1,22 @@
+<!-- Кнопка для открытия попапа -->
+<button
+  onclick="document.getElementById('popup').classList.remove('hidden')"
+  class="my-5 xl:my-12 border border-black rounded-full h-[100px] w-full max-w-[377px] p-[10px] mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+>
+  
+  <div
+    class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[25px] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
+  >
+    <!-- Фоновое изображение -->
+    <div
+      class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
+      style="
+        background-image: url('/public/images/webp/button-bg.webp');
+      "
+    ></div>
+
+    <span class="relative z-10 transition-all duration-300 hover:tracking-wider">
+      Оформить закупку
+    </span>
+  </div>
+</button>

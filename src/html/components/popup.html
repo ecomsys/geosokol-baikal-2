@@ -1,0 +1,176 @@
+<!-- Попап -->
+<div id="popup" class="fixed inset-0 z-50 hidden">
+  <!-- Затемнение (клик по нему закрывает попап) -->
+  <div
+    class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+    onclick="document.getElementById('popup').classList.add('hidden')"
+  ></div>
+
+  <!-- Сам попап (поверх оверлея) -->
+  <div
+    class="relative flex items-center justify-center min-h-screen p-4 pointer-events-none"
+  >
+    <div
+      class="relative w-full max-w-[599px] rounded-[49px] overflow-hidden shadow-2xl pointer-events-auto"
+    >
+      <!-- Фоновое изображение -->
+      <div
+        class="absolute inset-0 z-0 bg-cover bg-center"
+        style="
+          background-image: url('/public/images/webp/bg-popup.webp');
+        "
+      ></div>
+
+      <!-- Затемнение фона для читаемости текста -->
+      <div class="absolute inset-0 -z-10 bg-black/40"></div>
+
+      <!-- Кнопка закрытия (крестик) -->
+      <button
+        onclick="document.getElementById('popup').classList.add('hidden')"
+        class="absolute top-4 right-4 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 active:scale-90 group"
+      >
+        <svg 
+          class="w-6 h-6 text-white transition-all duration-300 group-hover:rotate-90" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Контент попапа -->
+      <div class="relative z-1 py-16 xl:py-20 px-5 xl:px-30">
+        <!-- Заголовок -->
+        <h2
+          class="text-[29px] xl:text-[35px] leading-[0.86] font-bold text-white text-center mb-15"
+        >
+          Оставьте заявку
+        </h2>
+
+        <!-- Форма -->
+        <form id="popupForm" class="space-y-7">
+          <!-- Поле "Имя" -->
+          <div
+            class="relative rounded-[12px] h-[69px] xl:h-[85px] flex items-center"
+            style="
+              backdrop-filter: blur(9.774243354797363px);
+              background: linear-gradient(90deg, #000 0%, #5b6997 100%);
+            "
+          >
+            <div
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <title>Profile Fill SVG Icon</title>
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="name"
+              placeholder="Имя"
+              required
+              class="w-full pl-12 pr-4 text-[17px] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
+            />
+          </div>
+
+          <!-- Поле "Телефон" -->
+          <div
+            class="relative rounded-[12px] h-[69px] xl:h-[85px] flex items-center"
+            style="
+              backdrop-filter: blur(9.774243354797363px);
+              background: linear-gradient(90deg, #000 0%, #5b6997 100%);
+            "
+          >
+            <div
+              class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <title>Bxs Phone SVG Icon</title>
+                <path
+                  d="M20.487 17.14l-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66c-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Номер телефона"
+              required
+              class="w-full pl-12 pr-4 text-[17px] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
+            />
+          </div>
+
+          <!-- Кнопка отправки -->
+          <button
+            type="submit"
+            class="mt-8 rounded-full h-[69px] xl:h-[85px] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+          >
+            <div
+              class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[27px] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
+            >
+              <!-- Фоновое изображение -->
+              <div
+                class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
+                style="
+                  background-image: url('/public/images/webp/popup-button-bg.webp');
+                "
+              ></div>
+
+              <span
+                class="relative z-10 transition-all duration-300 hover:tracking-wider"
+              >
+                Отправить
+              </span>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Обработка отправки формы
+  document.getElementById("popupForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+
+    if (name && phone) {
+      alert(`Спасибо, ${name}! Мы скоро свяжемся с вами по номеру ${phone}`);
+      document.getElementById("popup").classList.add("hidden");
+      this.reset();
+    }
+  });
+
+  // Маска для телефона (простая)
+  document.getElementById("phone").addEventListener("input", function (e) {
+    let value = this.value.replace(/\D/g, "");
+    if (value.length > 11) value = value.slice(0, 11);
+    let formatted = "";
+    if (value.length > 0) formatted = "+7";
+    if (value.length > 1) formatted += " (" + value.slice(1, 4);
+    if (value.length > 4) formatted += ") " + value.slice(4, 7);
+    if (value.length > 7) formatted += "-" + value.slice(7, 9);
+    if (value.length > 9) formatted += "-" + value.slice(9, 11);
+    this.value = formatted;
+  });
+</script>

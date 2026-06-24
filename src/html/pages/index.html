@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    {{> layout/head}}
+</head>
+
+<body class="relative min-h-screen bg-[#ECEDEF]">
+    
+    <!-- Фоновое изображение на весь экран -->
+    <div class="fixed inset-0 -z-10 min-h-[680px]">
+        <picture>
+            <!-- Десктоп: md и выше (≥640px) -->
+            <source 
+                media="(min-width: 640px)" 
+                srcset="/public/images/webp/new-bg-desktop.webp"
+                type="image/webp"
+            >
+            <!-- Мобильная версия: по умолчанию -->
+            <img 
+                class="w-full h-full object-cover object-top" 
+                src="/public/images/webp/new-bg-mobile.webp" 
+                alt="bg"
+                fetchpriority="high"
+            >
+        </picture>
+    </div>
+
+    <!-- Контент поверх фона -->
+    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[300px] max-w-[900px] px-[10px] py-[5px] relative z-10">
+        {{> layout/header}} 
+        {{> sections/main}}    
+    </div>
+
+    {{> layout/footer-scripts}}
+</body>
+
+</html>
