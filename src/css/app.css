@@ -18,7 +18,8 @@ Base
  html {
   opacity: 0.5;
   scroll-behavior: smooth;
-  transition: opacity 1s ease-in-out
+  transition: opacity 1s ease-in-out;
+  overflow-x: hidden;
 }
 html.loaded {
   opacity: 1;
