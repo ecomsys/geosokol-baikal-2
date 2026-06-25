@@ -6,9 +6,9 @@
 
   <body class="relative min-h-screen bg-[#ECEDEF]">
     <!-- top blue part -->
-    <div class="about-top relative bg-[#1a2446]">
+    <div class="xl:h-screen xl:h-[100dvh] about-top relative bg-[#1a2446]">
       <!-- Фоновое изображение на весь экран -->
-      <div class="absolute inset-0 z-5">
+      <div class="absolute bottom-0 left-0 right-0 z-5">
         <picture>
           <!-- Десктоп: md и выше (≥40rem) -->
           <source
@@ -18,7 +18,7 @@
           />
           <!-- Мобильная версия: по умолчанию -->
           <img
-            class="w-full h-full object-cover"
+            class="mx-auto w-auto h-[100dvh] object-cover object-bottom"
             src="/public/images/webp/top-about-bg.webp"
             alt="bg"
             fetchpriority="high"
@@ -35,8 +35,42 @@
     </div>
 
     <!-- bottom blue part -->
-   {{> sections/about-bottom}}
+    {{> sections/about-bottom}} {{> layout/footer}} {{> layout/footer-scripts}}
 
-    {{> layout/footer}} {{> layout/footer-scripts}}
+    <script>
+      // Анимация при скролле
+      document.addEventListener("DOMContentLoaded", function () {
+        const animateElements = document.querySelectorAll(".scroll-animate");
+
+        // Используем Intersection Observer для лучшей производительности
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Добавляем класс visible когда элемент появляется в зоне видимости
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Срабатывает когда 10% элемента видно
+            rootMargin: "0px 0px -50px 0px", // Немного смещаем точку срабатывания
+          },
+        );
+
+        // Наблюдаем за каждым элементом
+        animateElements.forEach((el) => observer.observe(el));
+
+        // Для элементов, которые уже видны при загрузке
+        setTimeout(() => {
+          animateElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              el.classList.add("visible");
+            }
+          });
+        }, 100);
+      });
+    </script>
   </body>
 </html>

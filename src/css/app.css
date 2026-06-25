@@ -15,14 +15,14 @@ ROOT
 /* ------------------------------------------------------------------------------------------------------------------------------
 Base
 --------------------------------------------------------------------------------------------------------------------------------*/
-/* html {
+ html {
   opacity: 0.5;
   scroll-behavior: smooth;
-  transition: all 0.3s ease-in-out
+  transition: opacity 1s ease-in-out
 }
 html.loaded {
   opacity: 1;
-} */
+} 
 
 /* ------------------------------------------------------------------------------------------------------------------------------
 MAIN
@@ -371,3 +371,24 @@ MAIN
     clip-path: inset(0 0 0 0);
   }
 }
+
+
+
+/* Анимации при скролле */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержки для разных элементов */
+.scroll-animate.delay-1 { transition-delay: 0.1s; }
+.scroll-animate.delay-2 { transition-delay: 0.2s; }
+.scroll-animate.delay-3 { transition-delay: 0.3s; }
+.scroll-animate.delay-4 { transition-delay: 0.4s; }
+.scroll-animate.delay-5 { transition-delay: 0.5s; }
