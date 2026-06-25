@@ -68,43 +68,64 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
     
     <!-- PWA MANIFEST -->
-    <!-- <link rel="manifest" href="/site.webmanifest" /> -->    <script type="module" crossorigin src="/assets/main-CFTPuoeK.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-Dgam-iaF.css">
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->    <script type="module" crossorigin src="/assets/main-D0rwZB-z.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CC_72hzN.css">
   </head>
 
   <body class="relative min-h-screen bg-[#ECEDEF]">
-    <!-- Фоновое изображение на весь экран -->
-    <div class="fixed inset-0 -z-10">
-      <picture>
-        <!-- Десктоп: md и выше (≥40rem) -->
-        <source
-          media="(min-width: 40rem)"
-          srcset="/assets/bg-desk-purchase-CHSFvg-m.webp"
-          type="image/webp"
-        />
-        <!-- Мобильная версия: по умолчанию -->
-        <img
-          class="w-full h-auto object-cover object-bottom-right"
-          src="/assets/bg-mobile-purchase-DzEmV8DP.webp"
-          alt="bg"
-          fetchpriority="high"
-        />
-      </picture>
-    </div>
+    <!-- top blue part -->
+    <div class="about-top relative bg-[#1a2446]">
+      <!-- Фоновое изображение на весь экран -->
+      <div class="absolute inset-0 z-5">
+        <picture>
+          <!-- Десктоп: md и выше (≥40rem) -->
+          <source
+            media="(min-width: 40rem)"
+            srcset="/assets/top-about-bg-CtYFww0t.webp"
+            type="image/webp"
+          />
+          <!-- Мобильная версия: по умолчанию -->
+          <img
+            class="w-full h-full object-cover"
+            src="/assets/top-about-bg-CtYFww0t.webp"
+            alt="bg"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
 
-    <!-- Контент поверх фона -->
-    <div
-      class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
-    >
-      <style>
+      <!-- Контент поверх фона -->
+      <div
+        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] py-[0.3125rem] relative z-10"
+      >
+        <style>
   .desk-menu li a {
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, -webkit-text-stroke 0.2s ease;
+    color: inherit;
+    -webkit-text-stroke: 0px transparent; /* базовое состояние */
   }
-  .desk-menu li a:hover {
-    color: black;
+
+  /* Активная ссылка — жирная 700 */
+  .desk-menu li a.active {
+    font-weight: 700;
+    color: var(--white);
+    -webkit-text-stroke: 0px transparent; /* убираем обводку у активной */
   }
-  .desk-menu li a.active {    
-    font-weight: 700; /* опционально */    
+
+  /* ХОВЕР — обводка (жирный, без прыжков) */
+  .desk-menu li a:not(.active):hover {
+    color: var(--white);
+    -webkit-text-stroke: 1.5px currentColor;
+    text-shadow: none;
+  }
+
+  /* Активная при ховере — ничего не меняем */
+  .desk-menu li a.active:hover {
+    -webkit-text-stroke: 0px transparent;
+    text-shadow: none;
   }
 </style>
 
@@ -118,14 +139,14 @@
   >
     <img
       class="w-full h-full object-cover"
-      src="./images/webp/bailkal-blue.webp"
+      src="./images/webp/bailkal-white.webp"
       alt="Логотип Байкал"
     />
   </a>
 
   <!-- desk menu -->
   <ul
-    class="desk-menu hidden md:inline-flex items-center gap-6 xl:gap-9 text-siniy text-[1rem] xl:text-[1.25rem] mx-auto"
+    class="desk-menu hidden md:inline-flex items-center gap-6 xl:gap-9 text-white text-[1rem] xl:text-[1.25rem] mx-auto"
   >
     <li><a href="contacts.html">Контакты</a></li>
     <li><a href="about.html">О нас</a></li>
@@ -270,13 +291,13 @@
         <li class="pt-4 w-full flex justify-center">
           <a
             href="tel:+77777777777"
-            class="inline-flex items-center bg-white/30 h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
+            class="inline-flex items-center bg-[#1a2446] h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
           >
             <span class="px-3 text-white text-[1rem] text-nowrap"
               >+7 777 777 7777</span
             >
             <span
-              class="bg-white/30 aspect-square h-full rounded-full flex items-center justify-center"
+              class="bg-[#1a2446] aspect-square h-full rounded-full flex items-center justify-center"
               style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
             >
               <img
@@ -309,26 +330,307 @@
   });
 </script>
  <main
-  class="flex-1 mt-10 py-5 text-siniy flex flex-col gap-5 text-[1.125rem] xs380:text-[1.25rem] sm:text-[1.375rem]"
+  class="mt-15 md:mt-10 flex-1 py-5 text-white flex flex-col gap-3 md:gap-6 text-[1.125rem] xs380:text-[1.25rem] sm:text-[30px]"
 >
-  <h1 class="xl:text-[3.1875rem] leading-[0.86] font-bold mb-5 text-center">
+  <h1 class="text-[3.1875rem] leading-[0.86] font-bold mb-5 text-center">
     О нас
   </h1>
 
-  <div class="flex flex-col gap-3 text-center">
+  <div class="flex flex-col gap-3 text-center leading-[1.38] mb-24">
     <p>
-      О нас - текст текст текст текст текст текст текст текст текст текст текст
-      текст текст текст текст текст текст текст текст текст текст текст текст
-      текст текст текст текст текст текст текст текст текст текст текст текст
-      текст текст текст текст текст текст текст текст текст текст текст текст
-      текст текст текст текст текст текст текст текст текст текст текст текст
-      текст текст текст
+      Байкал Маркет — не просто торговая площадка, а инженерно-производственный
+      центр в сфере современных беспилотных систем. Мы разрабатываем и
+      производим беспилотные летательные аппараты (БПЛА), а также комплексы
+      радиоэлектронной разведки (РЭР) и радиоэлектронной борьбы (РЭБ). Наши
+      решения создаются с учётом реальных задач: от точного обнаружения до
+      эффективного противодействия угрозам. Собственная конструкторская база,
+      строгий контроль качества на каждом этапе и ориентация на практическую
+      эффективность делают нашу продукцию надёжным инструментом для
+      профессионалов. Доверяйте тем, кто не только поставляет, но и создаёт
+      технологии.
     </p>
   </div>
 </main>
 
+      </div>
     </div>
 
-    <!-- Основной JS файл -->
+    <!-- bottom blue part -->
+   <section class="about-bottom relative py-20 overflow-hidden ">
+   
+        <!-- Фоновое изображение на весь экран -->
+         <div class="absolute inset-0 -z-5">
+           <picture>
+             <!-- Десктоп: md и выше (≥40rem) -->
+             <source
+               media="(min-width: 40rem)"
+               srcset="/assets/about-bottom-bg-CYM5Udp1.webp"
+               type="image/webp"
+             />
+             <!-- Мобильная версия: по умолчанию -->
+             <img
+               class="w-full h-full object-cover"
+               src="/assets/about-bottom-bg-CYM5Udp1.webp"
+               alt="bg"
+               fetchpriority="high"
+             />
+           </picture>
+           </div>
+     
+       <!-- РЯД 1: Картинка слева + Текст справа -->
+       <div class="mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] md:px-0 grid grid-cols-1 md:grid-cols-[52%_48%] items-center">
+         <div class="order-1 md:order-1">
+           <img
+             class="w-full h-auto object-cover"
+             src="/assets/about-samolet-DALfVS_-.webp"
+             alt="О нас"
+             loading="lazy"
+           />
+         </div>
+         <div class="order-2 md:order-2">
+           <p class="pt-10 md:pt-0 text-[17px] md:text-[20px] leading-[1.33] text-black text-center md:text-left">
+             БПЛА — это беспилотный летательный аппарат, который может выполнять
+             различные задачи без непосредственного участия человека. Они
+             оснащаются системами автопилота, обхода препятствий и стабилизации.
+             БПЛА используются для мониторинга инфраструктуры, доставки грузов в
+             труднодоступные регионы, аэрофотосъёмки, спасательных операций и
+             других целей.
+           </p>
+         </div>
+       </div>
+   
+       <!-- РАЗДЕЛИТЕЛЬ -->
+       <div class="my-12 md:my-16">
+         <img
+           class="w-full h-auto"
+           src="/assets/about-line-N4l-wIkM.webp"
+           alt="Разделитель"
+           loading="lazy"
+         />
+       </div>
+   
+       <!-- РЯД 2: Текст слева + Картинка справа -->
+       <div class="mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] md:px-0 grid grid-cols-1 md:grid-cols-[48%_52%] items-start">
+         <div class="order-2 md:order-1">
+            <p class="pt-10 md:pt-[10%] leading-[1.33] text-[17px] md:text-[20px] text-black text-center md:text-right">
+             РЭБ — это система радиоэлектронной борьбы, которая используется для
+             обнаружения и подавления каналов связи, управления и навигации дронов
+             Система способна выполнять большинство задач без участия оператора,
+             что снижает нагрузку на персонал и минимизирует вероятность ошибок.
+           </p>
+         </div>
+         <div class="order-1 md:order-2">
+           <img
+             class="w-full h-auto object-cover"
+             src="/assets/about-kamaz-BpXO9tUv.webp"
+             alt="О нас"
+             loading="lazy"
+           />
+         </div>
+       </div>
+   
+       <!-- Кнопка отправки -->
+       <div class="flex justify-center mt-7"><!-- Кнопка для открытия попапа -->
+   <button
+     onclick="document.getElementById('popup').classList.remove('hidden')"
+     class="border border-black rounded-full h-[6.25rem] w-full max-w-[23.5625rem] p-[0.625rem] transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+   >
+     
+     <div
+       class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[1.5625rem] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
+     >
+       <!-- Фоновое изображение -->
+       <div
+         class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
+         style="
+           background-image: url('/assets/button-bg-ktKzCF17.webp');
+         "
+       ></div>
+   
+       <span class="relative z-10 transition-all duration-300 hover:tracking-wider">
+         Оформить закупку
+       </span>
+     </div>
+   </button></div>
+     
+   </section>
+
+        <!-- Попап -->
+    <div id="popup" class="fixed inset-0 z-50 hidden">
+      <!-- Затемнение (клик по нему закрывает попап) -->
+      <div
+        class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        onclick="document.getElementById('popup').classList.add('hidden')"
+      ></div>
+    
+      <!-- Сам попап (поверх оверлея) -->
+      <div
+        class="relative flex items-center justify-center min-h-screen p-4 pointer-events-none"
+      >
+        <div
+          class="relative w-full max-w-[37.4375rem] rounded-[3.0625rem] overflow-hidden shadow-2xl pointer-events-auto"
+        >
+          <!-- Фоновое изображение -->
+          <div
+            class="absolute inset-0 z-0 bg-cover bg-center"
+            style="
+              background-image: url('/assets/bg-popup-BmMwqrsT.webp');
+            "
+          ></div>
+    
+          <!-- Затемнение фона для читаемости текста -->
+          <div class="absolute inset-0 -z-10 bg-black/40"></div>
+    
+          <!-- Кнопка закрытия (крестик) -->
+          <button
+            onclick="document.getElementById('popup').classList.add('hidden')"
+            class="absolute top-4 right-4 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 active:scale-90 group"
+          >
+            <svg 
+              class="w-6 h-6 text-white transition-all duration-300 group-hover:rotate-90" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+    
+          <!-- Контент попапа -->
+          <div class="relative z-1 py-16 xl:py-20 px-5 xl:px-30">
+            <!-- Заголовок -->
+            <h2
+              class="text-[1.8125rem] xl:text-[2.1875rem] leading-[0.86] font-bold text-white text-center mb-15"
+            >
+              Оставьте заявку
+            </h2>
+    
+            <!-- Форма -->
+            <form id="popupForm" class="space-y-7">
+              <!-- Поле "Имя" -->
+              <div
+                class="relative rounded-[0.75rem] h-[4.3125rem] xl:h-[5.3125rem] flex items-center"
+                style="
+                  backdrop-filter: blur(0.6109rem);
+                  background: linear-gradient(90deg, #000 0%, #5b6997 100%);
+                "
+              >
+                <div
+                  class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <title>Profile Fill SVG Icon</title>
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Имя"
+                  required
+                  class="w-full pl-12 pr-4 text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
+                />
+              </div>
+    
+              <!-- Поле "Телефон" -->
+              <div
+                class="relative rounded-[0.75rem] h-[4.3125rem] xl:h-[5.3125rem] flex items-center"
+                style="
+                  backdrop-filter: blur(0.6109rem);
+                  background: linear-gradient(90deg, #000 0%, #5b6997 100%);
+                "
+              >
+                <div
+                  class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <title>Bxs Phone SVG Icon</title>
+                    <path
+                      d="M20.487 17.14l-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66c-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Номер телефона"
+                  required
+                  class="w-full pl-12 pr-4 text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
+                />
+              </div>
+    
+              <!-- Кнопка отправки -->
+              <button
+                type="submit"
+                class="mt-8 rounded-full h-[4.3125rem] xl:h-[5.3125rem] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+              >
+                <div
+                  class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[1.6875rem] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
+                >
+                  <!-- Фоновое изображение -->
+                  <div
+                    class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
+                    style="
+                      background-image: url('/assets/popup-button-bg-yZXX-LEF.webp');
+                    "
+                  ></div>
+    
+                  <span
+                    class="relative z-10 transition-all duration-300 hover:tracking-wider"
+                  >
+                    Отправить
+                  </span>
+                </div>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Обработка отправки формы
+      document.getElementById("popupForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+    
+        if (name && phone) {
+          alert(`Спасибо, ${name}! Мы скоро свяжемся с вами по номеру ${phone}`);
+          document.getElementById("popup").classList.add("hidden");
+          this.reset();
+        }
+      });
+    
+      // Маска для телефона (простая)
+      document.getElementById("phone").addEventListener("input", function (e) {
+        let value = this.value.replace(/\D/g, "");
+        if (value.length > 11) value = value.slice(0, 11);
+        let formatted = "";
+        if (value.length > 0) formatted = "+7";
+        if (value.length > 1) formatted += " (" + value.slice(1, 4);
+        if (value.length > 4) formatted += ") " + value.slice(4, 7);
+        if (value.length > 7) formatted += "-" + value.slice(7, 9);
+        if (value.length > 9) formatted += "-" + value.slice(9, 11);
+        this.value = formatted;
+      });
+    </script> <!-- Основной JS файл -->
+
   </body>
 </html>

@@ -5,32 +5,38 @@
   </head>
 
   <body class="relative min-h-screen bg-[#ECEDEF]">
-    <!-- Фоновое изображение на весь экран -->
-    <div class="fixed inset-0 -z-10">
-      <picture>
-        <!-- Десктоп: md и выше (≥40rem) -->
-        <source
-          media="(min-width: 40rem)"
-          srcset="/public/images/webp/bg-desk-purchase.webp"
-          type="image/webp"
-        />
-        <!-- Мобильная версия: по умолчанию -->
-        <img
-          class="w-full h-auto object-cover object-bottom-right"
-          src="/public/images/webp/bg-mobile-purchase.webp"
-          alt="bg"
-          fetchpriority="high"
-        />
-      </picture>
+    <!-- top blue part -->
+    <div class="about-top relative bg-[#1a2446]">
+      <!-- Фоновое изображение на весь экран -->
+      <div class="absolute inset-0 z-5">
+        <picture>
+          <!-- Десктоп: md и выше (≥40rem) -->
+          <source
+            media="(min-width: 40rem)"
+            srcset="/public/images/webp/top-about-bg.webp"
+            type="image/webp"
+          />
+          <!-- Мобильная версия: по умолчанию -->
+          <img
+            class="w-full h-full object-cover"
+            src="/public/images/webp/top-about-bg.webp"
+            alt="bg"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
+
+      <!-- Контент поверх фона -->
+      <div
+        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] py-[0.3125rem] relative z-10"
+      >
+        {{> layout/header-about}} {{> sections/about-top}}
+      </div>
     </div>
 
-    <!-- Контент поверх фона -->
-    <div
-      class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
-    >
-      {{> layout/header}} {{> sections/about}}
-    </div>
+    <!-- bottom blue part -->
+   {{> sections/about-bottom}}
 
-    {{> layout/footer-scripts}}
+    {{> layout/footer}} {{> layout/footer-scripts}}
   </body>
 </html>

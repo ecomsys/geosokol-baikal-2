@@ -1,0 +1,77 @@
+<section class="about-bottom relative py-20 overflow-hidden ">
+
+     <!-- Фоновое изображение на весь экран -->
+      <div class="absolute inset-0 -z-5">
+        <picture>
+          <!-- Десктоп: md и выше (≥40rem) -->
+          <source
+            media="(min-width: 40rem)"
+            srcset="/public/images/webp/about-bottom-bg.webp"
+            type="image/webp"
+          />
+          <!-- Мобильная версия: по умолчанию -->
+          <img
+            class="w-full h-full object-cover"
+            src="/public/images/webp/about-bottom-bg.webp"
+            alt="bg"
+            fetchpriority="high"
+          />
+        </picture>
+        </div>
+  
+    <!-- РЯД 1: Картинка слева + Текст справа -->
+    <div class="mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] md:px-0 grid grid-cols-1 md:grid-cols-[52%_48%] items-center">
+      <div class="order-1 md:order-1">
+        <img
+          class="w-full h-auto object-cover"
+          src="/public/images/webp/about-samolet.webp"
+          alt="О нас"
+          loading="lazy"
+        />
+      </div>
+      <div class="order-2 md:order-2">
+        <p class="pt-10 md:pt-0 text-[17px] md:text-[20px] leading-[1.33] text-black text-center md:text-left">
+          БПЛА — это беспилотный летательный аппарат, который может выполнять
+          различные задачи без непосредственного участия человека. Они
+          оснащаются системами автопилота, обхода препятствий и стабилизации.
+          БПЛА используются для мониторинга инфраструктуры, доставки грузов в
+          труднодоступные регионы, аэрофотосъёмки, спасательных операций и
+          других целей.
+        </p>
+      </div>
+    </div>
+
+    <!-- РАЗДЕЛИТЕЛЬ -->
+    <div class="my-12 md:my-16">
+      <img
+        class="w-full h-auto"
+        src="/public/images/webp/about-line.webp"
+        alt="Разделитель"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- РЯД 2: Текст слева + Картинка справа -->
+    <div class="mx-auto min-w-[18.75rem] max-w-[1028px] px-[0.625rem] md:px-0 grid grid-cols-1 md:grid-cols-[48%_52%] items-start">
+      <div class="order-2 md:order-1">
+         <p class="pt-10 md:pt-[10%] leading-[1.33] text-[17px] md:text-[20px] text-black text-center md:text-right">
+          РЭБ — это система радиоэлектронной борьбы, которая используется для
+          обнаружения и подавления каналов связи, управления и навигации дронов
+          Система способна выполнять большинство задач без участия оператора,
+          что снижает нагрузку на персонал и минимизирует вероятность ошибок.
+        </p>
+      </div>
+      <div class="order-1 md:order-2">
+        <img
+          class="w-full h-auto object-cover"
+          src="/public/images/webp/about-kamaz.webp"
+          alt="О нас"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- Кнопка отправки -->
+    <div class="flex justify-center mt-7">{{> components/button}}</div>
+  
+</section>

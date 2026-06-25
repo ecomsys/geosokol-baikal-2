@@ -69,8 +69,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
     
     <!-- PWA MANIFEST -->
-    <!-- <link rel="manifest" href="/site.webmanifest" /> -->  <script type="module" crossorigin src="/assets/main-CFTPuoeK.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-Dgam-iaF.css">
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->  <script type="module" crossorigin src="/assets/main-D0rwZB-z.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-CC_72hzN.css">
 </head>
 
 <body class="relative min-h-screen bg-[#ECEDEF]">   
@@ -99,13 +99,32 @@
     <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10">
         <style>
           .desk-menu li a {
-            transition: all 0.3s ease-in-out;
+            position: relative;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease, -webkit-text-stroke 0.2s ease;
+            color: inherit;
+            -webkit-text-stroke: 0px transparent; /* базовое состояние */
           }
-          .desk-menu li a:hover {
-            color: black;
+        
+          /* Активная ссылка — жирная 700 */
+          .desk-menu li a.active {
+            font-weight: 700;
+            color: var(--siniy);
+            -webkit-text-stroke: 0px transparent; /* убираем обводку у активной */
           }
-          .desk-menu li a.active {    
-            font-weight: 700; /* опционально */    
+        
+          /* ХОВЕР — обводка (жирный, без прыжков) */
+          .desk-menu li a:not(.active):hover {
+            color: var(--siniy);
+            -webkit-text-stroke: 1.5px currentColor;
+            text-shadow: none;
+          }
+        
+          /* Активная при ховере — ничего не меняем */
+          .desk-menu li a.active:hover {
+            -webkit-text-stroke: 0px transparent;
+            text-shadow: none;
           }
         </style>
         
@@ -143,7 +162,11 @@
               class="bg-siniy aspect-square h-full rounded-full flex items-center justify-center"
               style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
             >
-              <img class="w-[1.625rem] h-[1.625rem]" src="./images/webp/tel.webp" alt="Tel" />
+              <img
+                class="w-[1.625rem] h-[1.625rem]"
+                src="./images/webp/tel.webp"
+                alt="Tel"
+              />
             </span>
           </a>
         
@@ -271,13 +294,13 @@
                 <li class="pt-4 w-full flex justify-center">
                   <a
                     href="tel:+77777777777"
-                    class="inline-flex items-center bg-white/30 h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
+                    class="inline-flex items-center bg-[#1a2446] h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
                   >
                     <span class="px-3 text-white text-[1rem] text-nowrap"
                       >+7 777 777 7777</span
                     >
                     <span
-                      class="bg-white/30 aspect-square h-full rounded-full flex items-center justify-center"
+                      class="bg-[#1a2446] aspect-square h-full rounded-full flex items-center justify-center"
                       style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
                     >
                       <img
@@ -309,21 +332,21 @@
             });
           });
         </script>
-        <main class="mt-10 flex-1 py-5 text-siniy flex flex-col gap-5 text-[1.125rem] xs380:text-[1.25rem] sm:text-[1.375rem] ">
-          <h1 class="xl:text-[3.1875rem] leading-[0.86] font-bold mb-5">Контакты</h1>
+        <main class="mt-15 md:mt-10 flex-1 py-5 text-siniy flex flex-col gap-3 md:gap-6 text-[1.125rem] xs380:text-[1.25rem] sm:text-[1.375rem] ">
+          <h1 class="text-[3.1875rem] leading-[0.86] font-bold mb-5">Контакты</h1>
         
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-1">
             <h2 class="text-[1.375rem] font-bold">Адрес</h2>
             <p>665821, Россия, Иркутская область, Ангарск, 290-й квартал 18/4</p>
           </div>
         
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-1">
             <h2 class="text-[1.375rem] font-bold">ИНН / ОГРН</h2>
             <p>3801111653 / 1103801005330</p>
           </div>
         
-          <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-            <div class="flex flex-col gap-3">
+          <div class="grid grid-cols-2 md:grid-cols-3 md:grid-cols-4">
+            <div class="flex flex-col gap-1">
               <h2 class="text-[1.375rem] font-bold">Телефон</h2>
               <ul class="leading-[1.2]">
                 <li>+7 395 566 17 97</li>
@@ -332,7 +355,7 @@
               </ul>
             </div>
         
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-1">
               <h2 class="text-[1.375rem] font-bold">Почта</h2>
               <p>baykm@mail.ru</p>
             </div>
