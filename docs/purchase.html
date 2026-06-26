@@ -55,11 +55,11 @@
       sizes="16x16"
       href="/favicons/favicon-16x16.png"
     />
-    <script type="module" crossorigin src="/assets/main-CIk-UhqB.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CHvMwwqF.css">
+    <script type="module" crossorigin src="/assets/main-CH21hCil.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-Rkx4B4Hu.css">
   </head>
 
-  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden relative">
+  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden">
 
      <!-- Фоновое изображение на весь экран -->
       <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -80,10 +80,10 @@
         </picture>
       </div>
 
-    <div class="relative h-full overflow-y-auto">
+    <div class="relative h-[100dvh] h-[100svh] overflow-y-auto">
       <!-- Контент поверх фона -->
       <div
-        class="flex flex-col w-full h-full mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+        class="flex flex-col w-full mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
       >
         <style>
   .desk-menu li a {
@@ -307,9 +307,9 @@
   });
 </script>
  <main
-  class="flex-1 pt-20 md:pt-10 pb-15 md:pb-10 text-siniy flex flex-col gap-3 md:gap-6 text-[1.125rem] xs380:text-[1.25rem] sm:text-[1.375rem]"
+  class="flex-1 pt-15 md:pt-10 pb-15 md:pb-10 text-siniy flex flex-col gap-3 md:gap-6 text-[1.125rem] xs380:text-[1.25rem] sm:text-[1.375rem]"
 >
-  <h1 class="text-[3.1875rem] leading-[0.86] font-bold mb-5 text-center">
+  <h1 class="text-[2.75rem] md:text-[3.1875rem] leading-[0.86] font-bold mb-5 text-center">
     Закупка по вашему списку
   </h1>
 
@@ -324,7 +324,7 @@
       текст текст текст
     </p>
   </div>
-  <div class="flex justify-center my-4 xl:my-12"><!-- Кнопка для открытия попапа -->
+  <div class="flex justify-center my-6 xl:my-12"><!-- Кнопка для открытия попапа -->
 <button
   id="popup-trigger"
   class="border border-[#1a2446] rounded-full h-[5rem] w-full max-w-[20rem] p-[0.5rem] transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative touch-manipulation"
@@ -493,7 +493,7 @@
       <!-- Затемнение (клик по нему закрывает попап) -->
       <div
         id="popover"
-        class="fixed top-0 left-0 bg-black/50 w-full h-full"
+        class="fixed top-0 left-0 bg-black/50 backdrop-blur-sm w-full h-full"
         onclick="closePopup()"
       ></div>
     
@@ -630,31 +630,14 @@
     
       function openPopup() {
         const popup = document.getElementById("popup");
-        const scrollContainer = document.querySelector(".scroll-container");
-    
         if (!popup) return;
-    
-        popup.classList.remove("hidden");
-    
-        if (scrollContainer) {
-          scrollContainer.classList.add("no-scroll");
-          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
-        }
+        popup.classList.remove("hidden");   
       }
     
       function closePopup() {
-        const popup = document.getElementById("popup");
-        const scrollContainer = document.querySelector(".scroll-container");
-    
+        const popup = document.getElementById("popup");    
         if (!popup) return;
-    
-        popup.classList.add("hidden");
-    
-        if (scrollContainer) {
-          scrollContainer.classList.remove("no-scroll");
-          const savedScroll = parseInt(scrollContainer.dataset.scrollTop || 0);
-          scrollContainer.scrollTop = savedScroll;
-        }
+        popup.classList.add("hidden");    
       }
     
       // ============================================
@@ -839,88 +822,11 @@
           }
         });
     
-        console.log('✅ Попап инициализирован');
+        console.log('Попап инициализирован');
       });
     </script>
     
-    <style>
-      /* ===== БЛОКИРОВКА СКРОЛЛА КОНТЕЙНЕРА ===== */
-      .scroll-container.no-scroll {
-        overflow: hidden !important;
-        height: 100% !important;
-        max-height: 100% !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100% !important;
-      }
-    
-      /* ===== АНИМАЦИЯ КНОПКИ ===== */
-      .touch-manipulation {
-        touch-action: manipulation;
-      }
-    
-      .active-animation {
-        animation: mobilePulse 0.35s ease forwards;
-      }
-    
-      .active-animation .relative.z-10 {
-        animation: textPulse 0.35s ease forwards;
-      }
-    
-      .active-animation .absolute.inset-0 {
-        animation: bgZoom 0.35s ease forwards;
-      }
-    
-      @keyframes mobilePulse {
-        0% { transform: scale(1); }
-        30% { transform: scale(0.92); }
-        60% { transform: scale(0.95); }
-        100% { transform: scale(0.97); }
-      }
-    
-      @keyframes textPulse {
-        0% { letter-spacing: 0; transform: scale(1); }
-        30% { letter-spacing: 0.1em; transform: scale(0.95); }
-        100% { letter-spacing: 0.05em; transform: scale(0.98); }
-      }
-    
-      @keyframes bgZoom {
-        0% { transform: scale(1); }
-        30% { transform: scale(1.15); }
-        100% { transform: scale(1.1); }
-      }
-    
-      /* ===== HOVER ЭФФЕКТЫ ===== */
-      @media (hover: hover) {
-        .group:hover .absolute.inset-0 {
-          transform: scale(1.1);
-        }
-        .group:hover .relative.z-10 {
-          letter-spacing: 0.1em;
-        }
-      }
-    
-      /* ===== TOUCH ЭФФЕКТЫ ===== */
-      .touch-active .absolute.inset-0 {
-        transform: scale(1.1);
-      }
-      .touch-active .relative.z-10 {
-        letter-spacing: 0.1em;
-      }
-    
-      /* ===== ОТКЛЮЧАЕМ HOVER НА МОБИЛКАХ ===== */
-      @media (hover: none) {
-        .group:hover .absolute.inset-0 {
-          transform: none !important;
-        }
-        .group:hover .relative.z-10 {
-          letter-spacing: normal !important;
-        }
-      }
-    
+    <style> 
       /* ===== УБИРАЕМ ЖЕЛТЫЙ ФОН АВТОЗАПОЛНЕНИЯ ===== */
       input:-webkit-autofill,
       input:-webkit-autofill:hover,

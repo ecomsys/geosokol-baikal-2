@@ -4,7 +4,7 @@
     {{> layout/head}}
   </head>
 
-  <body class="fixed inset-0 min-h-[100dvh] bg-[#ECEDEF]">
+  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden">
     <!-- Фоновое изображение на весь экран -->
     <div class="absolute inset-0 -z-10 min-h-[42.5rem]">
       <picture>
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Контент поверх фона -->
-    <div class="scroll-container ">
+    <div class="relative h-[100dvh] h-[100svh] overflow-y-auto">
       <!-- info tile-->
       <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
         <svg class="w-5 h-5">

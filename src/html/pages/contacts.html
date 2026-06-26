@@ -4,7 +4,7 @@
     {{> layout/head}}
   </head>
 
-  <body class="fixed inset-0 min-h-[100dvh] bg-[#ECEDEF]">
+  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden">
     <!-- Фоновое изображение на весь экран -->
     <div class="absolute inset-0 -z-10">
       <picture>
@@ -24,10 +24,10 @@
       </picture>
     </div>
 
-    <div class="scroll-container ">
+    <div class="relative h-[100dvh] h-[100svh] overflow-y-auto">
       <!-- Контент поверх фона -->
       <div
-        class="flex flex-col h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
       >
         {{> layout/header}} {{> sections/contacts}}
       </div>

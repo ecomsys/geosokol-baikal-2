@@ -4,7 +4,7 @@
     {{> layout/head}}
   </head>
 
-  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden relative">
+  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden">
 
      <!-- Фоновое изображение на весь экран -->
       <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -25,10 +25,10 @@
         </picture>
       </div>
 
-    <div class="relative h-full overflow-y-auto">
+    <div class="relative h-[100dvh] h-[100svh] overflow-y-auto">
       <!-- Контент поверх фона -->
       <div
-        class="flex flex-col w-full h-full mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+        class="flex flex-col w-full mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
       >
         {{> layout/header}} {{> sections/purchase}}
       </div>
