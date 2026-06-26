@@ -55,8 +55,8 @@
       sizes="16x16"
       href="/favicons/favicon-16x16.png"
     />
-    <script type="module" crossorigin src="/assets/main-DmPLCops.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-DeTC14i1.css">
+    <script type="module" crossorigin src="/assets/main-CIk-UhqB.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CHvMwwqF.css">
   </head>
 
   <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden relative">
@@ -492,9 +492,9 @@
     <div id="popup" class="fixed inset-0 z-50 hidden">
       <!-- Затемнение (клик по нему закрывает попап) -->
       <div
-      id="popover"
+        id="popover"
         class="fixed top-0 left-0 bg-black/50 w-full h-full"
-        onclick="document.getElementById('popup').classList.add('hidden')"
+        onclick="closePopup()"
       ></div>
     
       <!-- Сам попап (поверх оверлея) -->
@@ -507,9 +507,7 @@
           <!-- Фоновое изображение -->
           <div
             class="absolute inset-0 z-0 bg-cover bg-center"
-            style="
-              background-image: url(&quot;/assets/bg-popup-BmMwqrsT.webp&quot;);
-            "
+            style="background-image: url('/assets/bg-popup-BmMwqrsT.webp');"
           ></div>
     
           <!-- Затемнение фона для читаемости текста -->
@@ -517,7 +515,7 @@
     
           <!-- Кнопка закрытия (крестик) -->
           <button
-            onclick="document.getElementById('popup').classList.add('hidden')"
+            onclick="closePopup()"
             class="absolute top-3 right-3 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:scale-110 active:scale-90 group"
           >
             <svg
@@ -548,16 +546,11 @@
             <form id="popupForm" class="space-y-6">
               <!-- Поле "Имя" -->
               <div
-                class="relative rounded-[0.75rem] h-[3.75rem] xl:h-[4.5rem] flex items-center"
-                style="
-                  backdrop-filter: blur(0.6109rem);
-                  background: linear-gradient(90deg, #000 0%, #5b6997 100%);
-                "
+                class="relative rounded-[0.75rem] h-[3.75rem] xl:h-[4.5rem] flex items-center transition-all duration-300 focus-within:scale-[1.02] focus-within:shadow-lg focus-within:shadow-blue-500/20"
+                style="backdrop-filter: blur(0.6109rem); background: linear-gradient(90deg, #000 0%, #5b6997 100%);"
               >
-                <div
-                  class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
-                >
-                  <svg class="w-5 h-5 text-white">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg pointer-events-none">
+                  <svg class="w-5 h-5 text-white/70">
                     <use href="/icons/sprite/sprite.svg#user"></use>
                   </svg>
                 </div>
@@ -566,23 +559,22 @@
                   id="name"
                   name="name"
                   placeholder="Имя"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
                   required
-                  class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
+                  class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none bg-transparent"
                 />
               </div>
     
               <!-- Поле "Телефон" -->
               <div
-                class="relative rounded-[0.75rem] h-[3.75rem] xl:h-[4.5rem] flex items-center"
-                style="
-                  backdrop-filter: blur(0.6109rem);
-                  background: linear-gradient(90deg, #000 0%, #5b6997 100%);
-                "
+                class="relative rounded-[0.75rem] h-[3.75rem] xl:h-[4.5rem] flex items-center transition-all duration-300 focus-within:scale-[1.02] focus-within:shadow-lg focus-within:shadow-blue-500/20"
+                style="backdrop-filter: blur(0.6109rem); background: linear-gradient(90deg, #000 0%, #5b6997 100%);"
               >
-                <div
-                  class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg"
-                >
-                  <svg class="w-5 h-5 text-white">
+                <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-lg pointer-events-none">
+                  <svg class="w-5 h-5 text-white/70">
                     <use href="/icons/sprite/sprite.svg#phone"></use>
                   </svg>
                 </div>
@@ -590,30 +582,33 @@
                   type="tel"
                   name="tel"
                   id="phone"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
                   placeholder="Номер телефона"
                   required
-                  class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent tracking-wider"
+                  class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none bg-transparent tracking-wider"
                 />
               </div>
     
-              <!-- Кнопка отправки -->
+              <!-- Кнопка отправки с анимацией на мобилках -->
               <button
                 type="submit"
-                class="mt-6 rounded-full h-[3.75rem] xl:h-[4.5rem] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+                id="submit-button"
+                class="mt-6 rounded-full h-[3.75rem] xl:h-[4.5rem] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative touch-manipulation"
               >
                 <div
                   class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[1.375rem] xl:text-[1.5rem] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
                 >
                   <!-- Фоновое изображение -->
                   <div
-                    class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
-                    style="
-                      background-image: url(&quot;/assets/popup-button-bg-yZXX-LEF.webp&quot;);
-                    "
+                    class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-active:scale-110"
+                    style="background-image: url('/assets/popup-button-bg-yZXX-LEF.webp');"
                   ></div>
     
                   <span
-                    class="relative z-10 transition-all duration-300 hover:tracking-wider"
+                    class="relative z-10 transition-all duration-300 hover:tracking-wider group-active:tracking-wider"
                   >
                     Отправить
                   </span>
@@ -629,113 +624,340 @@
     <script src="https://unpkg.com/imask@6.4.3/dist/imask.min.js"></script>
     
     <script>
-      const phoneInput = document.getElementById('phone');
-      let maskInstance = null;
-      let isMaskActive = false;
+      // ============================================
+      // ОТКРЫТИЕ / ЗАКРЫТИЕ ПОПАПА
+      // ============================================
     
-      // Функция для активации маски
-      function activateMask() {
-        if (!maskInstance) {
-          maskInstance = IMask(phoneInput, {
-            mask: '+{7} (000) 000-00-00',
-            placeholderChar: '_',
-            lazy: false
+      function openPopup() {
+        const popup = document.getElementById("popup");
+        const scrollContainer = document.querySelector(".scroll-container");
+    
+        if (!popup) return;
+    
+        popup.classList.remove("hidden");
+    
+        if (scrollContainer) {
+          scrollContainer.classList.add("no-scroll");
+          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
+        }
+      }
+    
+      function closePopup() {
+        const popup = document.getElementById("popup");
+        const scrollContainer = document.querySelector(".scroll-container");
+    
+        if (!popup) return;
+    
+        popup.classList.add("hidden");
+    
+        if (scrollContainer) {
+          scrollContainer.classList.remove("no-scroll");
+          const savedScroll = parseInt(scrollContainer.dataset.scrollTop || 0);
+          scrollContainer.scrollTop = savedScroll;
+        }
+      }
+    
+      // ============================================
+      // КНОПКА ОТКРЫТИЯ
+      // ============================================
+    
+      document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('popup-trigger');
+        const popup = document.getElementById('popup');
+        
+        if (button && popup) {
+          let isAnimating = false;
+          
+          button.addEventListener('click', function(e) {
+            if (isAnimating) return;
+            
+            if (window.innerWidth < 768) {
+              e.preventDefault();
+              isAnimating = true;
+              
+              this.classList.add('active-animation');
+              
+              setTimeout(() => {
+                openPopup();
+                this.classList.remove('active-animation');
+                isAnimating = false;
+              }, 350);
+            } else {
+              openPopup();
+            }
+          });
+          
+          button.addEventListener('touchstart', function() {
+            this.classList.add('touch-active');
+          });
+          
+          button.addEventListener('touchend', function() {
+            this.classList.remove('touch-active');
           });
         }
-        isMaskActive = true;
-        phoneInput.placeholder = '';
-      }
     
-      // Функция для деактивации маски
-      function deactivateMask() {
-        if (maskInstance) {
-          maskInstance.destroy();
-          maskInstance = null;
+        // ============================================
+        // КНОПКА ОТПРАВКИ С АНИМАЦИЕЙ НА МОБИЛКАХ
+        // ============================================
+    
+        const submitBtn = document.getElementById('submit-button');
+        const form = document.getElementById('popupForm');
+    
+        if (submitBtn && form) {
+          let isSubmitting = false;
+    
+          submitBtn.addEventListener('click', function(e) {
+            if (isSubmitting) return;
+    
+            if (!form.checkValidity()) {
+              form.reportValidity();
+              return;
+            }
+    
+            if (window.innerWidth < 768 || 'ontouchstart' in window) {
+              e.preventDefault();
+              isSubmitting = true;
+    
+              this.classList.add('active-animation');
+    
+              setTimeout(() => {
+                form.dispatchEvent(new Event('submit', { cancelable: true }));
+                this.classList.remove('active-animation');
+                isSubmitting = false;
+              }, 350);
+            }
+          });
+    
+          submitBtn.addEventListener('touchstart', function() {
+            this.classList.add('touch-active');
+          });
+    
+          submitBtn.addEventListener('touchend', function() {
+            this.classList.remove('touch-active');
+          });
         }
-        isMaskActive = false;
-        phoneInput.value = '';
-        phoneInput.placeholder = 'Номер телефона';
-      }
     
-      // Обработка ввода - основной обработчик
-      phoneInput.addEventListener('input', function(e) {
-        const currentValue = this.value;
-        
-        // Если поле пустое - деактивируем маску
-        if (currentValue === '') {
-          if (isMaskActive) {
+        // ============================================
+        // МАСКА ТЕЛЕФОНА
+        // ============================================
+    
+        const phoneInput = document.getElementById('phone');
+        let maskInstance = null;
+        let isMaskActive = false;
+    
+        function activateMask() {
+          if (!maskInstance) {
+            maskInstance = IMask(phoneInput, {
+              mask: '+{7} (000) 000-00-00',
+              placeholderChar: '_',
+              lazy: false
+            });
+          }
+          isMaskActive = true;
+          phoneInput.placeholder = '';
+        }
+    
+        function deactivateMask() {
+          if (maskInstance) {
+            maskInstance.destroy();
+            maskInstance = null;
+          }
+          isMaskActive = false;
+          phoneInput.value = '';
+          phoneInput.placeholder = 'Номер телефона';
+        }
+    
+        phoneInput.addEventListener('input', function() {
+          const currentValue = this.value;
+          
+          if (currentValue === '') {
+            if (isMaskActive) deactivateMask();
+            return;
+          }
+    
+          if (!isMaskActive && currentValue.length > 0) {
+            const firstChar = currentValue.charAt(0);
+            activateMask();
+            if (maskInstance) {
+              maskInstance.value = firstChar;
+            }
+            return;
+          }
+        });
+    
+        phoneInput.addEventListener('focus', function() {
+          if (this.value === '' && !isMaskActive) {
+            this.placeholder = 'Номер телефона';
+          }
+        });
+    
+        phoneInput.addEventListener('blur', function() {
+          const value = this.value;
+          if (value === '' || value === '+7 (___) ___-__-__') {
             deactivateMask();
           }
-          return;
-        }
+        });
     
-        // Если маска не активна и есть символы - активируем
-        if (!isMaskActive && currentValue.length > 0) {
-          // Запоминаем первый символ
-          const firstChar = currentValue.charAt(0);
-          
-          // Активируем маску
-          activateMask();
-          
-          // Устанавливаем значение через IMask
-          if (maskInstance) {
-            maskInstance.value = firstChar;
+        phoneInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Backspace' || e.key === 'Delete') {
+            setTimeout(() => {
+              const value = this.value;
+              if (value === '' || value === '+7 (___) ___-__-__') {
+                deactivateMask();
+              }
+            }, 0);
           }
-          return;
-        }
+        });
     
-        // Если маска активна - просто даем IMask делать свою работу
-        // Ничего не делаем, IMask сам обработает ввод
-      });
+        // ============================================
+        // ОТПРАВКА ФОРМЫ
+        // ============================================
     
-      // Обработка фокуса
-      phoneInput.addEventListener('focus', function() {
-        if (this.value === '' && !isMaskActive) {
-          this.placeholder = 'Номер телефона';
-        }
-      });
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value;
+          const phone = document.getElementById('phone').value;
     
-      // Обработка потери фокуса
-      phoneInput.addEventListener('blur', function() {
-        const value = this.value;
-        // Если поле пустое или содержит только маску с подчеркиваниями
-        if (value === '' || value === '+7 (___) ___-__-__') {
-          deactivateMask();
-        }
-      });
+          if (name && phone) {
+            alert(`Спасибо, ${name}! Мы скоро свяжемся с вами по номеру ${phone}`);
+            closePopup();
+            this.reset();
+            deactivateMask();
+          }
+        });
     
-      // Обработка клавиши Backspace/Delete
-      phoneInput.addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace' || e.key === 'Delete') {
-          // Даем событию обработаться, потом проверяем
-          setTimeout(() => {
-            const value = this.value;
-            if (value === '' || value === '+7 (___) ___-__-__') {
-              deactivateMask();
+        // ============================================
+        // ЗАКРЫТИЕ ПО ESC
+        // ============================================
+    
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') {
+            const popup = document.getElementById('popup');
+            if (!popup.classList.contains('hidden')) {
+              closePopup();
             }
-          }, 0);
+          }
+        });
+    
+        console.log('✅ Попап инициализирован');
+      });
+    </script>
+    
+    <style>
+      /* ===== БЛОКИРОВКА СКРОЛЛА КОНТЕЙНЕРА ===== */
+      .scroll-container.no-scroll {
+        overflow: hidden !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+      }
+    
+      /* ===== АНИМАЦИЯ КНОПКИ ===== */
+      .touch-manipulation {
+        touch-action: manipulation;
+      }
+    
+      .active-animation {
+        animation: mobilePulse 0.35s ease forwards;
+      }
+    
+      .active-animation .relative.z-10 {
+        animation: textPulse 0.35s ease forwards;
+      }
+    
+      .active-animation .absolute.inset-0 {
+        animation: bgZoom 0.35s ease forwards;
+      }
+    
+      @keyframes mobilePulse {
+        0% { transform: scale(1); }
+        30% { transform: scale(0.92); }
+        60% { transform: scale(0.95); }
+        100% { transform: scale(0.97); }
+      }
+    
+      @keyframes textPulse {
+        0% { letter-spacing: 0; transform: scale(1); }
+        30% { letter-spacing: 0.1em; transform: scale(0.95); }
+        100% { letter-spacing: 0.05em; transform: scale(0.98); }
+      }
+    
+      @keyframes bgZoom {
+        0% { transform: scale(1); }
+        30% { transform: scale(1.15); }
+        100% { transform: scale(1.1); }
+      }
+    
+      /* ===== HOVER ЭФФЕКТЫ ===== */
+      @media (hover: hover) {
+        .group:hover .absolute.inset-0 {
+          transform: scale(1.1);
         }
-      });
-    
-      // Обработка отправки формы
-      document.getElementById("popupForm").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-    
-        if (name && phone) {
-          alert(`Спасибо, ${name}! Мы скоро свяжемся с вами по номеру ${phone}`);
-          document.getElementById("popup").classList.add("hidden");
-          this.reset();
-          deactivateMask();
+        .group:hover .relative.z-10 {
+          letter-spacing: 0.1em;
         }
-      });
+      }
     
-      // Обработка клика по оверлею для закрытия
-      document.querySelector('#popover').addEventListener('click', function() {
-        document.getElementById('popup').classList.add('hidden');
-      });
-    </script> <!-- Основной JS файл -->
+      /* ===== TOUCH ЭФФЕКТЫ ===== */
+      .touch-active .absolute.inset-0 {
+        transform: scale(1.1);
+      }
+      .touch-active .relative.z-10 {
+        letter-spacing: 0.1em;
+      }
+    
+      /* ===== ОТКЛЮЧАЕМ HOVER НА МОБИЛКАХ ===== */
+      @media (hover: none) {
+        .group:hover .absolute.inset-0 {
+          transform: none !important;
+        }
+        .group:hover .relative.z-10 {
+          letter-spacing: normal !important;
+        }
+      }
+    
+      /* ===== УБИРАЕМ ЖЕЛТЫЙ ФОН АВТОЗАПОЛНЕНИЯ ===== */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+        -webkit-text-fill-color: white !important;
+        background-color: transparent !important;
+        background: transparent !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    
+      input:-moz-autofill {
+        background-color: transparent !important;
+        color: white !important;
+      }
+    
+      input {
+        background: transparent !important;
+      }
+    
+      /* ===== УБИРАЕМ СПИННЕР В ТЕЛЕФОНЕ ===== */
+      input[type="tel"]::-webkit-inner-spin-button,
+      input[type="tel"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    
+      input[type="tel"] {
+        -moz-appearance: textfield;
+      }
+    
+      /* ===== ПЕРЕХОДЫ ДЛЯ ИНПУТОВ ===== */
+      .focus-within\:scale-\[1\.02\] {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+    </style> <!-- Основной JS файл -->
 
   </body>
 </html>
