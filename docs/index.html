@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     
     <!-- MOBILE VIEWPORT -->
@@ -45,98 +44,195 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-  <script type="module" crossorigin src="/assets/main-DbeiHT41.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CASDHcn4.css">
-</head>
+    <script type="module" crossorigin src="/assets/main-xW194Ljx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-B5wJ3QGZ.css">
+  </head>
 
-<body class="relative min-h-screen bg-[#ECEDEF]">
-    
+  <body class="relative min-h-screen bg-[#ECEDEF]">
     <!-- Фоновое изображение на весь экран -->
     <div class="fixed inset-0 -z-10 min-h-[42.5rem]">
-        <picture>
-            <!-- Десктоп: md и выше (≥40rem) -->
-            <source 
-                media="(min-width: 40rem)" 
-                srcset="/assets/new-bg-desktop-CJOXA8XP.webp"
-                type="image/webp"
-            >
-            <!-- Мобильная версия: по умолчанию -->
-            <img 
-                class="w-full h-full object-cover object-top" 
-                src="/assets/new-bg-mobile-Ddl7y8Cb.webp" 
-                alt="bg"
-                fetchpriority="high"
-            >
-        </picture>
+      <picture>
+        <!-- Десктоп: md и выше (≥40rem) -->
+        <source
+          media="(min-width: 40rem)"
+          srcset="/assets/new-bg-desktop-CJOXA8XP.webp"
+          type="image/webp"
+        />
+        <!-- Мобильная версия: по умолчанию -->
+        <img
+          class="w-full h-full object-cover object-top"
+          src="/assets/new-bg-mobile-Ddl7y8Cb.webp"
+          alt="bg"
+          fetchpriority="high"
+        />
+      </picture>
+    </div>
+
+    <!-- info -->
+    <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
+      <svg class="w-5 h-5">
+        <use href="/icons/sprite/sprite.svg#info"></use>
+      </svg>
+      <p class="mt-1 text-[0.4rem]">
+        Представленные товары и комплектующие для БПЛА имеют исключительно
+        бытовое назначение. Не являются оружием.
+      </p>
     </div>
 
     <!-- Контент поверх фона -->
-    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10">
-        <style>
-          .desk-menu li a {
-            position: relative;
-            text-decoration: none;
-            font-weight: 500;
-            transition:
-              color 0.2s ease,
-              -webkit-text-stroke 0.2s ease;
-            color: inherit;
-            -webkit-text-stroke: 0rem transparent; /* базовое состояние */
-          }
-        
-          /* Активная ссылка — жирная 700 */
-          .desk-menu li a.active {
-            color: var(--siniy);
-            -webkit-text-stroke: 0.0938rem currentColor;
-            text-shadow: none;
-          }
-        
-          /* ХОВЕР — обводка (жирный, без прыжков) */
-          .desk-menu li a:not(.active):hover {
-            color: var(--siniy);
-            -webkit-text-stroke: 0.0938rem currentColor;
-            text-shadow: none;
-          }
-        
-          /* Активная при ховере — ничего не меняем */
-          .desk-menu li a.active:hover {
-            -webkit-text-stroke: 0rem transparent;
-            text-shadow: none;
-          }
-        </style>
-        
-        <header
-          class="w-full max-w-[55.625rem] mx-auto flex items-center justify-between relative z-50"
-        >
-          <!-- logo -->
-          <a
-            href="index.html"
-            class="block w-[4rem] h-[4rem] md:w-[4.625rem] md:h-[4.625rem] hover:scale-[102%] transition-all duration-300 shrink-0"
-          >
-            <img
-              class="w-full h-full object-cover"
-              src="./images/webp/bailkal-blue.webp"
-              alt="Логотип Байкал"
-            />
-          </a>
-        
-          <!-- desk menu -->
-          <ul
-            class="desk-menu hidden md:inline-flex items-center gap-6 xl:gap-9 text-siniy text-[1rem] xl:text-[1.25rem] mx-auto"
-          >
-            <li><a href="contacts.html">Контакты</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="purchase.html">Закупка по вашему списку</a></li>
-          </ul>
-        
-          <!-- tel button -->
+    <div
+      class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+    >
+      <style>
+  .desk-menu li a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    transition:
+      color 0.2s ease,
+      -webkit-text-stroke 0.2s ease;
+    color: inherit;
+    -webkit-text-stroke: 0rem transparent; /* базовое состояние */
+  }
+
+  /* Активная ссылка — жирная 700 */
+  .desk-menu li a.active {
+    color: var(--siniy);
+    -webkit-text-stroke: 0.0938rem currentColor;
+    text-shadow: none;
+  }
+
+  /* ХОВЕР — обводка (жирный, без прыжков) */
+  .desk-menu li a:not(.active):hover {
+    color: var(--siniy);
+    -webkit-text-stroke: 0.0938rem currentColor;
+    text-shadow: none;
+  }
+
+</style>
+
+<header
+  class="w-full max-w-[55.625rem] mx-auto flex items-center justify-between relative z-50"
+>
+  <!-- logo -->
+  <a
+    href="index.html"
+    class="block w-[4rem] h-[4rem] md:w-[4.625rem] md:h-[4.625rem] hover:scale-[102%] transition-all duration-300 shrink-0"
+  >
+    <img
+      class="w-full h-full object-cover"
+      src="./images/webp/bailkal-blue.webp"
+      alt="Логотип Байкал"
+    />
+  </a>
+
+  <!-- desk menu -->
+  <ul
+    class="desk-menu hidden md:inline-flex items-center gap-6 xl:gap-9 text-siniy text-[1rem] xl:text-[1.25rem] mx-auto"
+  >
+    <li><a href="contacts.html">Контакты</a></li>
+    <li><a href="about.html">О нас</a></li>
+    <li><a href="purchase.html">Закупка по вашему списку</a></li>
+  </ul>
+
+  <!-- tel button -->
+  <a
+    href="tel:+77777777777"
+    class="hidden md:inline-flex items-center bg-siniy h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300 shrink-0"
+  >
+    <span class="px-3 text-white text-[1rem] text-nowrap">+7 777 777 7777</span>
+    <span
+      class="bg-siniy aspect-square h-full rounded-full flex items-center justify-center"
+      style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
+    >
+      <img
+        class="w-[1.625rem] h-[1.625rem]"
+        src="./images/webp/tel.webp"
+        alt="Tel"
+      />
+    </span>
+  </a>
+
+  <!-- burger -->
+  <button
+    id="burgerBtn"
+    class="flex md:hidden items-center justify-center bg-siniy rounded-[0.5rem] h-[3.0625rem] w-[3.0625rem] relative z-50"
+  >
+     <svg class="w-5.5 h-5.5 text-white">
+        <use href="/icons/sprite/sprite.svg#burger"></use>
+      </svg>
+  </button>
+</header>
+
+<!-- OVERLAY -->
+<div
+  id="overlay"
+  class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+></div>
+
+<!-- DRAWER MENU -->
+<div
+  id="drawer"
+  class="min-w-[18.75rem] fixed inset-0 bg-siniy z-50 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+>
+  <!-- Шапка драйвера (фиксированная) -->
+  <div
+    class="shrink-0 flex justify-between items-center px-[0.625rem] py-2 border-b border-white/15"
+  >
+    <a
+      href="index.html"
+      class="block w-[4rem] h-[4rem] hover:scale-[102%] transition-all duration-300"
+    >
+      <img
+        class="w-full h-full object-cover"
+        src="./images/webp/bailkal-white.webp"
+        alt="Логотип Байкал"
+      />
+    </a>
+    <button
+      id="closeDrawer"
+      class="flex items-center justify-center bg-siniy rounded-[0.5rem] h-[3.0625rem] w-[3.0625rem] hover:opacity-70 transition-opacity"
+    >
+      <svg class="w-5.5 h-5.5 text-white">
+        <use href="/icons/sprite/sprite.svg#close"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Меню (скроллится если не помещается) -->
+  <div class="flex-1 overflow-y-auto py-4 relative scrollbar-none">
+    <!-- Фоновое изображение (без затемнения) -->
+    <div class="absolute inset-0 -z-10 flex items-center justify-center">
+      <img
+        class="max-w-[26rem] w-full h-auto object-contain object-center"
+        src="./images/webp/baikal-mask.webp"
+        alt="bg"
+      />
+    </div>
+
+    <div class="min-h-full flex items-center justify-center px-4">
+      <ul
+        class="mobile-menu flex flex-col items-center gap-6 text-white text-2xl font-monts w-full max-w-sm pb-4"
+      >
+        <li class="w-full text-center">
+          <a href="contacts.html" class="block">Контакты</a>
+        </li>
+        <li class="w-full text-center">
+          <a href="about.html" class="block">О нас</a>
+        </li>
+        <li class="w-full text-center">
+          <a href="purchase.html" class="block">Закупка по вашему списку</a>
+        </li>
+        <li class="pt-4 w-full flex justify-center">
           <a
             href="tel:+77777777777"
-            class="hidden md:inline-flex items-center bg-siniy h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300 shrink-0"
+            class="inline-flex items-center bg-[#1a2446] h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
           >
-            <span class="px-3 text-white text-[1rem] text-nowrap">+7 777 777 7777</span>
+            <span class="px-3 text-white text-[1rem] text-nowrap"
+              >+7 777 777 7777</span
+            >
             <span
-              class="bg-siniy aspect-square h-full rounded-full flex items-center justify-center"
+              class="bg-[#1a2446] aspect-square h-full rounded-full flex items-center justify-center"
               style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
             >
               <img
@@ -146,190 +242,93 @@
               />
             </span>
           </a>
-        
-          <!-- burger -->
-          <button
-            id="burgerBtn"
-            class="flex md:hidden items-center justify-center bg-siniy rounded-[0.5rem] h-[3.0625rem] w-[3.0625rem] relative z-50"
-          >
-             <svg class="w-5.5 h-5.5 text-white">
-                <use href="/icons/sprite/sprite.svg#burger"></use>
-              </svg>
-          </button>
-        </header>
-        
-        <!-- OVERLAY -->
-        <div
-          id="overlay"
-          class="fixed inset-0 bg-black/50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
-        ></div>
-        
-        <!-- DRAWER MENU -->
-        <div
-          id="drawer"
-          class="min-w-[18.75rem] fixed inset-0 bg-siniy z-50 flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-        >
-          <!-- Шапка драйвера (фиксированная) -->
-          <div
-            class="shrink-0 flex justify-between items-center px-[0.625rem] py-2 border-b border-white/15"
-          >
-            <a
-              href="index.html"
-              class="block w-[4rem] h-[4rem] hover:scale-[102%] transition-all duration-300"
-            >
-              <img
-                class="w-full h-full object-cover"
-                src="./images/webp/bailkal-white.webp"
-                alt="Логотип Байкал"
-              />
-            </a>
-            <button
-              id="closeDrawer"
-              class="flex items-center justify-center bg-siniy rounded-[0.5rem] h-[3.0625rem] w-[3.0625rem] hover:opacity-70 transition-opacity"
-            >
-              <svg class="w-5.5 h-5.5 text-white">
-                <use href="/icons/sprite/sprite.svg#close"></use>
-              </svg>
-            </button>
-          </div>
-        
-          <!-- Меню (скроллится если не помещается) -->
-          <div class="flex-1 overflow-y-auto py-4 relative scrollbar-none">
-            <!-- Фоновое изображение (без затемнения) -->
-            <div class="absolute inset-0 -z-10 flex items-center justify-center">
-              <img
-                class="max-w-[26rem] w-full h-auto object-contain object-center"
-                src="./images/webp/baikal-mask.webp"
-                alt="bg"
-              />
-            </div>
-        
-            <div class="min-h-full flex items-center justify-center px-4">
-              <ul
-                class="mobile-menu flex flex-col items-center gap-6 text-white text-2xl font-monts w-full max-w-sm pb-4"
-              >
-                <li class="w-full text-center">
-                  <a href="contacts.html" class="block">Контакты</a>
-                </li>
-                <li class="w-full text-center">
-                  <a href="about.html" class="block">О нас</a>
-                </li>
-                <li class="w-full text-center">
-                  <a href="purchase.html" class="block">Закупка по вашему списку</a>
-                </li>
-                <li class="pt-4 w-full flex justify-center">
-                  <a
-                    href="tel:+77777777777"
-                    class="inline-flex items-center bg-[#1a2446] h-[2.6875rem] rounded-full font-monts hover:opacity-90 hover:scale-[102%] transition-all duration-300"
-                  >
-                    <span class="px-3 text-white text-[1rem] text-nowrap"
-                      >+7 777 777 7777</span
-                    >
-                    <span
-                      class="bg-[#1a2446] aspect-square h-full rounded-full flex items-center justify-center"
-                      style="box-shadow: -0.375rem 0 1.3125rem 0 rgba(0, 0, 0, 0.55)"
-                    >
-                      <img
-                        class="w-[1.625rem] h-[1.625rem]"
-                        src="./images/webp/tel.webp"
-                        alt="Tel"
-                      />
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-        <script>
-          // desk menu link
-          document.addEventListener("DOMContentLoaded", () => {
-            const currentUrl = window.location.href;
-        
-            document.querySelectorAll(".desk-menu a").forEach((link) => {
-              // Если href ссылки совпадает с текущим URL
-              if (link.href === currentUrl) {
-                link.classList.add("active");
-              }
-              // Или если ссылка содержит текущий путь
-              else if (link.getAttribute("href") === window.location.pathname) {
-                link.classList.add("active");
-              }
-            });
-          });
-        
-          // burger
-          document.addEventListener("DOMContentLoaded", () => {
-            const burgerBtn = document.getElementById("burgerBtn");
-            const drawer = document.getElementById("drawer");
-            const overlay = document.getElementById("overlay");
-            const closeBtn = document.getElementById("closeDrawer");
-        
-            let isOpen = false;
-        
-            function openDrawer() {
-              isOpen = true;
-              drawer.classList.remove("translate-x-full");
-              overlay.classList.remove("opacity-0", "pointer-events-none");
-              overlay.classList.add("opacity-100", "pointer-events-auto");
-              document.body.classList.add("overflow-hidden");
-              burgerBtn.classList.add("burger-open");
-            }
-        
-            function closeDrawer() {
-              isOpen = false;
-              drawer.classList.add("translate-x-full");
-              overlay.classList.add("opacity-0", "pointer-events-none");
-              overlay.classList.remove("opacity-100", "pointer-events-auto");
-              document.body.classList.remove("overflow-hidden");
-              burgerBtn.classList.remove("burger-open");
-            }
-        
-            burgerBtn.addEventListener("click", () => {
-              isOpen ? closeDrawer() : openDrawer();
-            });
-        
-            closeBtn.addEventListener("click", closeDrawer);
-            overlay.addEventListener("click", closeDrawer);
-        
-            document.addEventListener("keydown", (e) => {
-              if (e.key === "Escape" && isOpen) closeDrawer();
-            });
-          });
-        </script>
-        <main class="flex-1 flex flex-col items-center justify-start 
-        gap-[2.5rem]
-        mt-[25dvh] 
-        xs350:mt-[25dvh]
-        xs380:mt-[34dvh]
-        xs400:mt-[35.5dvh]
-        sm:mt-[32dvh]
-        xl:mt-[25dvh]
-        2xl:mt-[25dvh]
-        ">
-          <div class="animate-text">
-            <h1 class="main__title">Байкал Маркет</h1>
-            <h2 class="main__description">
-              <span class="main__white">Мы знаем </span>
-              <span class="main__white">о комплектующих</span>
-              <span class="main__accent">БПЛА•РЭР•РЭБ всё!</span>
-            </h2>
-          </div>
-          <div class="inline-flex flex-col gap-4 xs576:flex-row mx-auto">
-            <a href="#" class="animate-btn main__btn">
-              <img src="./images/webp/telegram.webp" alt="Telegram" />
-              <span>Перейти в магазин</span>
-            </a>
-            <a href="#" class="animate-btn main__btn">
-              <img src="./images/webp/max.webp" alt="Max" />
-              <span>Перейти в магазин</span>
-            </a>
-          </div>
-        </main>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  // desk menu link
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.href;
+
+    document.querySelectorAll(".desk-menu a").forEach((link) => {
+      // Если href ссылки совпадает с текущим URL
+      if (link.href === currentUrl) {
+        link.classList.add("active");
+      }
+      // Или если ссылка содержит текущий путь
+      else if (link.getAttribute("href") === window.location.pathname) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // burger
+  document.addEventListener("DOMContentLoaded", () => {
+    const burgerBtn = document.getElementById("burgerBtn");
+    const drawer = document.getElementById("drawer");
+    const overlay = document.getElementById("overlay");
+    const closeBtn = document.getElementById("closeDrawer");
+
+    let isOpen = false;
+
+    function openDrawer() {
+      isOpen = true;
+      drawer.classList.remove("translate-x-full");
+      overlay.classList.remove("opacity-0", "pointer-events-none");
+      overlay.classList.add("opacity-100", "pointer-events-auto");
+      document.body.classList.add("overflow-hidden");
+      burgerBtn.classList.add("burger-open");
+    }
+
+    function closeDrawer() {
+      isOpen = false;
+      drawer.classList.add("translate-x-full");
+      overlay.classList.add("opacity-0", "pointer-events-none");
+      overlay.classList.remove("opacity-100", "pointer-events-auto");
+      document.body.classList.remove("overflow-hidden");
+      burgerBtn.classList.remove("burger-open");
+    }
+
+    burgerBtn.addEventListener("click", () => {
+      isOpen ? closeDrawer() : openDrawer();
+    });
+
+    closeBtn.addEventListener("click", closeDrawer);
+    overlay.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen) closeDrawer();
+    });
+  });
+</script>
+ <main
+  class="flex-1 flex flex-col items-center justify-start gap-[2.5rem] mt-[25dvh] xs350:mt-[25dvh] xs380:mt-[34dvh] xs400:mt-[35.5dvh] sm:mt-[32dvh] xl:mt-[25dvh] 2xl:mt-[25dvh]"
+>
+  <div class="animate-text">
+    <h1 class="main__title">Байкал Маркет</h1>
+    <h2 class="main__description">
+      <span class="main__white">Мы знаем </span>
+      <span class="main__white">о комплектующих</span>
+      <span class="main__accent">БПЛА•РЭР•РЭБ всё!</span>
+    </h2>
+  </div>
+  <div class="inline-flex flex-col gap-4 xs576:flex-row mx-auto">
+    <a href="#" class="animate-btn main__btn">
+      <img src="./images/webp/telegram.webp" alt="Telegram" />
+      <span>Перейти в магазин</span>
+    </a>
+    <a href="#" class="animate-btn main__btn">
+      <img src="./images/webp/max.webp" alt="Max" />
+      <span>Перейти в магазин</span>
+    </a>
+  </div>
+</main>
+
     </div>
 
     <!-- Основной JS файл -->
-</body>
-
+  </body>
 </html>

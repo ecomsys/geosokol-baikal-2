@@ -378,8 +378,8 @@ MAIN
 /* Анимации при скролле */
 .scroll-animate {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(2rem);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .scroll-animate.visible {

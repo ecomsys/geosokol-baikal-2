@@ -44,8 +44,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <script type="module" crossorigin src="/assets/main-DbeiHT41.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CASDHcn4.css">
+    <script type="module" crossorigin src="/assets/main-xW194Ljx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-B5wJ3QGZ.css">
   </head>
 
   <body class="relative min-h-screen bg-[#ECEDEF]">
@@ -100,11 +100,6 @@
     text-shadow: none;
   }
 
-  /* Активная при ховере — ничего не меняем */
-  .desk-menu li a.active:hover {
-    -webkit-text-stroke: 0rem transparent;
-    text-shadow: none;
-  }
 </style>
 
 <header
@@ -500,6 +495,7 @@
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   placeholder="Имя"
                   required
                   class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
@@ -523,6 +519,7 @@
                 </div>
                 <input
                   type="tel"
+                  name="tel"
                   id="phone"
                   placeholder="Номер телефона"
                   required
@@ -689,7 +686,7 @@
           },
           {
             threshold: 0.1, // Срабатывает когда 10% элемента видно
-            rootMargin: "0px 0px -50px 0px", // Немного смещаем точку срабатывания
+            rootMargin: "0px 0px -25px 0px", // Немного смещаем точку срабатывания
           },
         );
 
