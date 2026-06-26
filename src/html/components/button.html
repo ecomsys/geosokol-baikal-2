@@ -1,22 +1,159 @@
 <!-- Кнопка для открытия попапа -->
 <button
-  onclick="document.getElementById('popup').classList.remove('hidden')"
-  class="border border-[#1a2446] rounded-full h-[5rem] w-full max-w-[20rem] p-[0.5rem] transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
+  id="popup-trigger"
+  class="border border-[#1a2446] rounded-full h-[5rem] w-full max-w-[20rem] p-[0.5rem] transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative touch-manipulation"
 >
-  
   <div
     class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[1.25rem] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
   >
     <!-- Фоновое изображение -->
     <div
-      class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
+      class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-active:scale-110"
       style="
-        background-image: url('/public/images/webp/button-bg.webp');
+       background-image: url('/public/images/webp/button-bg.webp');
       "
     ></div>
 
-    <span class="relative z-10 transition-all duration-300 hover:tracking-wider">
+    <span class="relative z-10 transition-all duration-300 hover:tracking-wider group-active:tracking-wider">
       Оформить закупку
     </span>
   </div>
 </button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('popup-trigger');
+    const popup = document.getElementById('popup');
+    
+    if (button && popup) {
+      let isAnimating = false;
+      
+      button.addEventListener('click', function(e) {
+        // Если анимация уже идет - игнорируем
+        if (isAnimating) return;
+        
+        // Для мобильных устройств
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          isAnimating = true;
+          
+          // Добавляем класс для анимации
+          this.classList.add('active-animation');
+          
+          // Ждем завершения анимации (300ms + небольшая задержка)
+          setTimeout(() => {
+            popup.classList.remove('hidden');
+            this.classList.remove('active-animation');
+            isAnimating = false;
+          }, 350);
+        } else {
+          // Для десктопа - сразу открываем
+          popup.classList.remove('hidden');
+        }
+      });
+      
+      // Для touch-устройств добавляем тактильную обратную связь
+      button.addEventListener('touchstart', function() {
+        this.classList.add('touch-active');
+      });
+      
+      button.addEventListener('touchend', function() {
+        this.classList.remove('touch-active');
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Анимация для мобильных устройств */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Анимация при нажатии на мобилке */
+  .active-animation {
+    animation: mobilePulse 0.35s ease forwards;
+  }
+  
+  .active-animation .relative.z-10 {
+    animation: textPulse 0.35s ease forwards;
+  }
+  
+  .active-animation .absolute.inset-0 {
+    animation: bgZoom 0.35s ease forwards;
+  }
+  
+  /* Десктопные анимации */
+  @media (hover: hover) {
+    .group:hover .absolute.inset-0 {
+      transform: scale(1.1);
+    }
+    
+    .group:hover .relative.z-10 {
+      letter-spacing: 0.1em;
+    }
+  }
+  
+  /* Мобильные анимации (работают и на десктопе при клике) */
+  @keyframes mobilePulse {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(0.92);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.97);      
+    }
+  }
+  
+  @keyframes textPulse {
+    0% {
+      letter-spacing: 0;
+      transform: scale(1);
+    }
+    30% {
+      letter-spacing: 0.1em;
+      transform: scale(0.95);
+    }
+    100% {
+      letter-spacing: 0.05em;
+      transform: scale(0.98);
+    }
+  }
+  
+  @keyframes bgZoom {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Анимация для touch-событий */
+  .touch-active .absolute.inset-0 {
+    transform: scale(1.1);
+  }
+  
+  .touch-active .relative.z-10 {
+    letter-spacing: 0.1em;
+  }
+  
+  /* Отключаем hover на мобилках */
+  @media (hover: none) {
+    .group:hover .absolute.inset-0 {
+      transform: none !important;
+    }
+    
+    .group:hover .relative.z-10 {
+      letter-spacing: normal !important;
+    }
+  }
+</style>

@@ -24,24 +24,25 @@
       </picture>
     </div>
 
-    <!-- info -->
-    <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
-      <svg class="w-5 h-5">
-        <use href="/icons/sprite/sprite.svg#info"></use>
-      </svg>
-      <p class="mt-1 text-[0.4rem]">
-        Представленные товары и комплектующие для БПЛА имеют исключительно
-        бытовое назначение. Не являются оружием.
-      </p>
-    </div>
-
     <!-- Контент поверх фона -->
-    <div
-      class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
-    >
-      {{> layout/header}} {{> sections/main}}
-    </div>
+    <div class="relative min-h-[100dvh] overflow-hidden">
+      <!-- info tile-->
+      <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
+        <svg class="w-5 h-5">
+          <use href="/icons/sprite/sprite.svg#info"></use>
+        </svg>
+        <p class="mt-1 text-[0.4rem]">
+          Представленные товары и комплектующие для БПЛА имеют исключительно
+          бытовое назначение. Не являются оружием.
+        </p>
+      </div>
 
+      <div
+        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+      >
+        {{> layout/header}} {{> sections/main}}
+      </div>
+    </div>
     {{> layout/footer-scripts}}
   </body>
 </html>

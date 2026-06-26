@@ -44,8 +44,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <script type="module" crossorigin src="/assets/main-xW194Ljx.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-B5wJ3QGZ.css">
+    <script type="module" crossorigin src="/assets/main-CV72nrp3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-CYwf2ta4.css">
   </head>
 
   <body class="relative min-h-screen bg-[#ECEDEF]">
@@ -68,22 +68,23 @@
       </picture>
     </div>
 
-    <!-- info -->
-    <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
-      <svg class="w-5 h-5">
-        <use href="/icons/sprite/sprite.svg#info"></use>
-      </svg>
-      <p class="mt-1 text-[0.4rem]">
-        Представленные товары и комплектующие для БПЛА имеют исключительно
-        бытовое назначение. Не являются оружием.
-      </p>
-    </div>
-
     <!-- Контент поверх фона -->
-    <div
-      class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
-    >
-      <style>
+    <div class="relative min-h-[100dvh] overflow-hidden">
+      <!-- info tile-->
+      <div class="absolute bottom-3 left-3 max-w-[11.5rem] text-[#bababa]">
+        <svg class="w-5 h-5">
+          <use href="/icons/sprite/sprite.svg#info"></use>
+        </svg>
+        <p class="mt-1 text-[0.4rem]">
+          Представленные товары и комплектующие для БПЛА имеют исключительно
+          бытовое назначение. Не являются оружием.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+      >
+        <style>
   .desk-menu li a {
     position: relative;
     text-decoration: none;
@@ -307,6 +308,7 @@
  <main
   class="flex-1 flex flex-col items-center justify-start gap-[2.5rem] mt-[25dvh] xs350:mt-[25dvh] xs380:mt-[34dvh] xs400:mt-[35.5dvh] sm:mt-[32dvh] xl:mt-[25dvh] 2xl:mt-[25dvh]"
 >
+  <!-- content -->
   <div class="animate-text">
     <h1 class="main__title">Байкал Маркет</h1>
     <h2 class="main__description">
@@ -327,8 +329,8 @@
   </div>
 </main>
 
+      </div>
     </div>
-
     <!-- Основной JS файл -->
   </body>
 </html>
