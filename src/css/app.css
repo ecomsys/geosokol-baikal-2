@@ -15,7 +15,10 @@ ROOT
 /* ------------------------------------------------------------------------------------------------------------------------------
 Base
 --------------------------------------------------------------------------------------------------------------------------------*/
- html {
+html{
+  background: #000;
+}
+ html {  
   opacity: 0.5;
   scroll-behavior: smooth;
   transition: opacity 1s ease-in-out;
@@ -24,6 +27,23 @@ Base
 html.loaded {
   opacity: 1;
 } 
+
+html,
+body{    
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Главная магия! Запрещаем body скроллиться */
+  overscroll-behavior: none; /* Убиваем резиновый эффект (pull-to-refresh) на корню */ 
+}
+
+/* КОНТЕЙНЕР СКРОЛЛА */
+.scroll-container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------
 MAIN

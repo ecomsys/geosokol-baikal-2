@@ -6,7 +6,7 @@
     <!-- MOBILE VIEWPORT -->
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
     />
     
     <!-- TITLE -->
@@ -18,10 +18,7 @@
       content="Краткое описание проекта. Что это за сайт, для кого и какую пользу он даёт."
     />
     
-    <meta
-      name="keywords"
-      content="ключевые, слова, проекта, через, запятую"
-    />
+    <meta name="keywords" content="ключевые, слова, проекта, через, запятую" />
     
     <meta name="author" content="Your Name or Company" />
     <meta name="robots" content="index, follow" />
@@ -41,40 +38,55 @@
     
     <!-- FAVICONS -->
     <link rel="icon" type="image/x-icon" href="/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <script type="module" crossorigin src="/assets/main-CV72nrp3.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-CYwf2ta4.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <script type="module" crossorigin src="/assets/main-DmPLCops.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-DeTC14i1.css">
   </head>
 
-  <body class="relative min-h-screen bg-[#ECEDEF]">
+  <body class="fixed inset-0 min-h-[100dvh] bg-[#ECEDEF]">
     <!-- top blue part -->
-    <div class="xl:h-screen xl:h-[100dvh] about-top relative bg-[#1a2446]">
-      <!-- Фоновое изображение на весь экран -->
-      <div class="absolute bottom-0 left-0 right-0 z-5">
-        <picture>
-          <!-- Десктоп: md и выше (≥40rem) -->
-          <source
-            media="(min-width: 40rem)"
-            srcset="/assets/top-about-bg-CtYFww0t.webp"
-            type="image/webp"
-          />
-          <!-- Мобильная версия: по умолчанию -->
-          <img
-            class="mx-auto w-auto h-[100dvh] object-cover object-bottom"
-            src="/assets/top-about-bg-CtYFww0t.webp"
-            alt="bg"
-            fetchpriority="high"
-          />
-        </picture>
-      </div>
+    <div class="scroll-container ">
+      <div class="xl:h-screen xl:h-[100dvh] about-top relative bg-[#1a2446]">
+        <!-- Фоновое изображение на весь экран -->
+        <div class="absolute bottom-0 left-0 right-0 z-5">
+          <picture>
+            <!-- Десктоп: md и выше (≥40rem) -->
+            <source
+              media="(min-width: 40rem)"
+              srcset="/assets/top-about-bg-CtYFww0t.webp"
+              type="image/webp"
+            />
+            <!-- Мобильная версия: по умолчанию -->
+            <img
+              class="mx-auto w-auto h-[100dvh] object-cover object-bottom"
+              src="/assets/top-about-bg-CtYFww0t.webp"
+              alt="bg"
+              fetchpriority="high"
+            />
+          </picture>
+        </div>
 
-      <!-- Контент поверх фона -->
-      <div
-        class="flex flex-col mx-auto min-w-[18.75rem] max-w-[64.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
-      >
-        <style>
+        <!-- Контент поверх фона -->
+        <div
+          class="flex flex-col mx-auto min-w-[18.75rem] max-w-[64.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+        >
+          <style>
   .desk-menu li a {
     position: relative;
     text-decoration: none;
@@ -318,11 +330,11 @@
   </div>
 </section>
 
+        </div>
       </div>
-    </div>
 
-    <!-- bottom blue part -->
-    <section class="about-bottom relative py-20 overflow-hidden ">
+      <!-- bottom blue part -->
+      <section class="about-bottom relative py-20 overflow-hidden ">
 
      <!-- Фоновое изображение на весь экран -->
       <div class="absolute inset-0 -z-5">
@@ -561,7 +573,8 @@
     <div id="popup" class="fixed inset-0 z-50 hidden">
       <!-- Затемнение (клик по нему закрывает попап) -->
       <div
-        class="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      id="popover"
+        class="fixed top-0 left-0 bg-black/50 w-full h-full"
         onclick="document.getElementById('popup').classList.add('hidden')"
       ></div>
     
@@ -634,7 +647,6 @@
                   id="name"
                   name="name"
                   placeholder="Имя"
-                  autocomplete="off"
                   required
                   class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent"
                 />
@@ -659,7 +671,6 @@
                   type="tel"
                   name="tel"
                   id="phone"
-                  autocomplete="off"
                   placeholder="Номер телефона"
                   required
                   class="w-full pl-12 pr-4 text-[1rem] xl:text-[1.0625rem] text-white placeholder-white/60 focus:outline-none focus:border-transparent transition bg-transparent tracking-wider"
@@ -669,22 +680,21 @@
               <!-- Кнопка отправки -->
               <button
                 type="submit"
-                id="submit-button"
-                class="mt-6 rounded-full h-[3.75rem] xl:h-[4.5rem] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative touch-manipulation"
+                class="mt-6 rounded-full h-[3.75rem] xl:h-[4.5rem] w-full mx-auto transition-all duration-300 hover:scale-[1.02] active:scale-95 active:duration-100 group relative"
               >
                 <div
                   class="relative w-full h-full flex items-center justify-center rounded-full bg-siniy text-white text-[1.375rem] xl:text-[1.5rem] font-medium transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 active:shadow-inner active:bg-blue-800 overflow-hidden"
                 >
                   <!-- Фоновое изображение -->
                   <div
-                    class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110 group-active:scale-110"
+                    class="absolute inset-0 z-0 rounded-full bg-cover bg-center transition-all duration-500 group-hover:scale-110"
                     style="
                       background-image: url(&quot;/assets/popup-button-bg-yZXX-LEF.webp&quot;);
                     "
                   ></div>
     
                   <span
-                    class="relative z-10 transition-all duration-300 hover:tracking-wider group-active:tracking-wider"
+                    class="relative z-10 transition-all duration-300 hover:tracking-wider"
                   >
                     Отправить
                   </span>
@@ -700,56 +710,7 @@
     <script src="https://unpkg.com/imask@6.4.3/dist/imask.min.js"></script>
     
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const submitBtn = document.getElementById("submit-button");
-        const form = document.getElementById("popupForm");
-    
-        if (submitBtn && form) {
-          let isSubmitting = false;
-    
-          submitBtn.addEventListener("click", function (e) {
-            // Если уже отправляем - игнорируем
-            if (isSubmitting) return;
-    
-            // Проверяем валидность формы
-            if (!form.checkValidity()) {
-              form.reportValidity();
-              return;
-            }
-    
-            // Для мобильных устройств
-            if (window.innerWidth < 768 || "ontouchstart" in window) {
-              e.preventDefault();
-              isSubmitting = true;
-    
-              // Добавляем класс для анимации
-              this.classList.add("active-animation");
-    
-              // Ждем завершения анимации (350ms)
-              setTimeout(() => {
-                // Отправляем форму
-                form.dispatchEvent(new Event("submit", { cancelable: true }));
-                this.classList.remove("active-animation");
-                isSubmitting = false;
-              }, 350);
-            }
-            // Для десктопа - анимация и так есть через active
-          });
-    
-          // Для touch-устройств добавляем тактильную обратную связь
-          submitBtn.addEventListener("touchstart", function () {
-            this.classList.add("touch-active");
-          });
-    
-          submitBtn.addEventListener("touchend", function () {
-            this.classList.remove("touch-active");
-          });
-        }
-      });
-    </script>
-    
-    <script>
-      const phoneInput = document.getElementById("phone");
+      const phoneInput = document.getElementById('phone');
       let maskInstance = null;
       let isMaskActive = false;
     
@@ -757,13 +718,13 @@
       function activateMask() {
         if (!maskInstance) {
           maskInstance = IMask(phoneInput, {
-            mask: "+{7} (000) 000-00-00",
-            placeholderChar: "_",
-            lazy: false,
+            mask: '+{7} (000) 000-00-00',
+            placeholderChar: '_',
+            lazy: false
           });
         }
         isMaskActive = true;
-        phoneInput.placeholder = "";
+        phoneInput.placeholder = '';
       }
     
       // Функция для деактивации маски
@@ -773,16 +734,16 @@
           maskInstance = null;
         }
         isMaskActive = false;
-        phoneInput.value = "";
-        phoneInput.placeholder = "Номер телефона";
+        phoneInput.value = '';
+        phoneInput.placeholder = 'Номер телефона';
       }
     
       // Обработка ввода - основной обработчик
-      phoneInput.addEventListener("input", function (e) {
+      phoneInput.addEventListener('input', function(e) {
         const currentValue = this.value;
-    
+        
         // Если поле пустое - деактивируем маску
-        if (currentValue === "") {
+        if (currentValue === '') {
           if (isMaskActive) {
             deactivateMask();
           }
@@ -793,10 +754,10 @@
         if (!isMaskActive && currentValue.length > 0) {
           // Запоминаем первый символ
           const firstChar = currentValue.charAt(0);
-    
+          
           // Активируем маску
           activateMask();
-    
+          
           // Устанавливаем значение через IMask
           if (maskInstance) {
             maskInstance.value = firstChar;
@@ -809,28 +770,28 @@
       });
     
       // Обработка фокуса
-      phoneInput.addEventListener("focus", function () {
-        if (this.value === "" && !isMaskActive) {
-          this.placeholder = "Номер телефона";
+      phoneInput.addEventListener('focus', function() {
+        if (this.value === '' && !isMaskActive) {
+          this.placeholder = 'Номер телефона';
         }
       });
     
       // Обработка потери фокуса
-      phoneInput.addEventListener("blur", function () {
+      phoneInput.addEventListener('blur', function() {
         const value = this.value;
         // Если поле пустое или содержит только маску с подчеркиваниями
-        if (value === "" || value === "+7 (___) ___-__-__") {
+        if (value === '' || value === '+7 (___) ___-__-__') {
           deactivateMask();
         }
       });
     
       // Обработка клавиши Backspace/Delete
-      phoneInput.addEventListener("keydown", function (e) {
-        if (e.key === "Backspace" || e.key === "Delete") {
+      phoneInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' || e.key === 'Delete') {
           // Даем событию обработаться, потом проверяем
           setTimeout(() => {
             const value = this.value;
-            if (value === "" || value === "+7 (___) ___-__-__") {
+            if (value === '' || value === '+7 (___) ___-__-__') {
               deactivateMask();
             }
           }, 0);
@@ -852,14 +813,12 @@
       });
     
       // Обработка клика по оверлею для закрытия
-      document
-        .querySelector("#popup .absolute.inset-0.bg-black\\/50")
-        .addEventListener("click", function () {
-          document.getElementById("popup").classList.add("hidden");
-        });
+      document.querySelector('#popover').addEventListener('click', function() {
+        document.getElementById('popup').classList.add('hidden');
+      });
     </script>
- <!-- Основной JS файл -->
-
+    </div>
+    <!-- Основной JS файл -->
 
     <script>
       // Анимация при скролле

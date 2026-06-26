@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
+  <head>
     {{> layout/head}}
-</head>
+  </head>
 
-<body class="relative min-h-screen bg-[#ECEDEF]">   
+  <body class="fixed inset-0 bg-[#ECEDEF] overflow-hidden relative">
 
-      <!-- Фоновое изображение на весь экран -->
-    <div class="fixed inset-0 -z-10 ">
+     <!-- Фоновое изображение на весь экран -->
+      <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <picture>
-            <!-- Десктоп: md и выше (≥40rem) -->
-            <source 
-                media="(min-width: 40rem)" 
-                srcset="/public/images/webp/bg-desk-purchase.webp"
-                type="image/webp"
-            >
-            <!-- Мобильная версия: по умолчанию -->
-            <img 
-                class="w-full h-auto object-cover object-bottom-right" 
-                src="/public/images/webp/bg-mobile-purchase.webp" 
-                alt="bg"
-                fetchpriority="high"
-            >
+          <!-- Десктоп: md и выше (≥40rem) -->
+          <source
+            media="(min-width: 40rem)"
+            srcset="/public/images/webp/bg-desk-purchase.webp"
+            type="image/webp"
+          />
+          <!-- Мобильная версия: по умолчанию -->
+          <img
+            class="w-full h-auto object-cover object-bottom-right"
+            src="/public/images/webp/bg-mobile-purchase.webp"
+            alt="bg"
+            fetchpriority="high"
+          />
         </picture>
-    </div>
-    
-    <!-- Контент поверх фона -->
-    <div class="flex flex-col h-screen h-[100dvh] mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10">
-        {{> layout/header}} 
-        {{> sections/purchase}}            
+      </div>
+
+    <div class="relative h-full overflow-y-auto">
+      <!-- Контент поверх фона -->
+      <div
+        class="flex flex-col w-full h-full mx-auto min-w-[18.75rem] max-w-[56.25rem] px-[0.625rem] py-[0.3125rem] relative z-10"
+      >
+        {{> layout/header}} {{> sections/purchase}}
+      </div>
     </div>
 
-    {{> layout/footer}} 
-    {{> layout/footer-scripts}}
-</body>
-
+    {{> layout/footer}} {{> layout/footer-scripts}}
+  </body>
 </html>
